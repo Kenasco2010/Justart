@@ -1,0 +1,53 @@
+<template name="companyCapitalDetails">
+
+    <legend align="center">Company Capital Details</legend>
+    <div class="container">
+        <div class="row">
+            {{#autoForm collection="CapitalDetails" id="insertCapitalDetailsForm" type="insert"}}
+                <fieldset>
+
+                    <div class="two-col">
+                        <div class="col1">
+                            {{> afQuickField name='authorisedShares'}}
+                            {{> afQuickField name='statedCapital'}}
+
+                            <!-- //Number of Authorised Shares of Each Class:p
+-->
+                            {{> afQuickField name='ordinaryShares'}}
+                            {{> afQuickField name='preferenceShares'}}
+
+                            <!--//Number of Issued Shares of Each Class:-->
+                            {{> afQuickField name='ordinaryShares'}}
+                            {{> afQuickField name='preferenceShares'}}
+
+                            <!--// Amount Paid In Cash of Each Class:-->
+                            {{> afQuickField name='ordinaryShares'}}
+                            {{> afQuickField name='preferenceShares'}}
+                        </div>
+
+                        <div class="col2">
+                            <!--// Amount Paid Otherwise than in Cash of Each Class:
+ -->
+                            {{> afQuickField name='ordinaryShares'}}
+                            {{> afQuickField name='preferenceShares'}}
+                            <!--// Amount Remaining to be Paid on Each Class:
+-->
+                            {{> afQuickField name='ordinaryShares'}}
+                            {{> afQuickField name='ordinaryShares'}}
+                            <!--preference shares-->
+                            {{> afQuickField name='preferenceShares'}}
+                            {{> afQuickField name='preferenceShares'}}
+                            {{> afQuickField name='address'}}
+                        </div>
+
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Insert</button>
+            {{/autoForm}}
+        </div>
+    </div>
+
+    <div class="col-md-4 col-md-offset-6">
+        <a class="btn btn-primary" href="{{pathFor 'companyDirectorSignature'}}">Next page</a>
+    </div>
+</template>

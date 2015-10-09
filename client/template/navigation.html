@@ -27,6 +27,8 @@
                                     <ul class="submenu">
                                         <li><a target="_blank" href="https://egovonline.gegov.gov.gh/RGDPortalWeb/portal/RGDHome/eghana.portal">Registration information</a></li>
                                         <li><a href="{{pathFor 'setUpCompanyProfile'}}">Register company</a></li>
+                                        <li><a href="{{pathFor 'companyRegProfile'}}">insert company</a></li>
+                                        <li><a href="{{pathFor 'principalPlaceOfBusiness'}}">Principal Place Of Business</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="#">Business Information</a>
@@ -40,13 +42,7 @@
                                 <li><a href="#">Insurance packages</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="{{pathFor 'companyDashboard'}}">Dashboard</a>
-                            <!--<ul class="submenu">-->
-                            <!--<li><a href="schedule.html">Schedule Style One</a></li>-->
-                            <!--<li><a href="schedule-2.html">Schedule Style Two</a></li>-->
-                            <!--<li><a href="single-event.html">Single Event</a></li>-->
-                            <!--</ul>-->
-                        </li>
+
                         <li class=""><a href="#">About</a>
 
                         </li>
@@ -76,7 +72,16 @@
                         <!--<li><a href="blog-detail.html">Blog Details</a></li>-->
                         <!--</ul>-->
                         <!--</li>-->
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Contact</a></li>
+
+                        {{#if currentUser}}
+                            <li class="dropdown"><a href="{{pathFor 'companyDashboard'}}">Dashboard</a>
+                            </li>
+                            <li><a href="{{pathFor 'signout'}}">signOut</a></li>
+                        {{else}}
+                                <li><a href="{{pathFor 'signin'}}">signIn</a></li>
+                                <li><a href="{{pathFor 'signup'}}">signUp</a></li>
+                            {{/if}}
                     </ul>
                 </div>
             </nav>

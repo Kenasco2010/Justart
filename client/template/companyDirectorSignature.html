@@ -1,0 +1,21 @@
+<template name="companyDirectorSignature">
+
+    <legend align="center">Company Director Signature</legend>
+    <div class="container">
+        <div class="row">
+            {{#autoForm collection="DirectorSignature" id="insertDirectorSignatureForm" type="insert"}}
+                <fieldset>
+                    {{> afQuickField name='directorName'}}
+                    <h4>Upload Your Signature</h4>
+                    {{> afQuickField name="picture" }}
+
+
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Insert</button>
+            {{/autoForm}}
+        </div>
+    </div>
+    <div class="col-md-4 col-md-offset-6">
+        <a class="btn btn-primary" href="{{pathFor 'companySecretarySignature'}}">Next page</a>
+    </div>
+</template>
