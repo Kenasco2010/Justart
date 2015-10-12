@@ -1,0 +1,94 @@
+<template name="companyCapitalDetails">
+    <div id="wrapper">
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+
+
+                        {{#autoForm collection="CapitalDetails" id="insertCapitalDetailsForm" type="insert"}}
+                            <fieldset>
+                                <h2 class="heading">Company Capital Details <span></span></h2>
+
+                                {{> afQuickField name='authorisedShares' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Authorised shares of the company"
+                                placeholder="Authorised shares of the company"}}
+
+                                {{> afQuickField name='statedCapital' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Companies stated capital"
+                                placeholder="Companies stated capital"}}
+
+                                <!-- //Number of Authorised Shares of Each Class:p
+    -->
+                                {{> afQuickField name='ordinaryShares' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Ordinary Shares"
+                                placeholder="Ordinary Shares"}}
+
+                                {{> afQuickField name='preferenceShares' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Preference Shares"
+                                placeholder="Preference Shares"}}
+
+                                <!--//Number of Issued Shares of Each Class:-->
+                                {{> afQuickField name='ordinaryShares' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Ordinary Shares"
+                                placeholder="Ordinary Shares"}}
+
+                                {{> afQuickField name='preferenceShares' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Preference Shares"
+                                placeholder="Preference Shares"}}
+
+                                <!--// Amount Paid In Cash of Each Class:-->
+                                {{> afQuickField name='ordinaryShares' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Ordinary Shares"
+                                placeholder="Ordinary Shares"}}
+
+                                {{> afQuickField name='preferenceShares' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Preference Shares"
+                                placeholder="Preference Shares"}}
+
+                                <!--// Amount Paid Otherwise than in Cash of Each Class:
+     -->
+                                {{> afQuickField name='ordinaryShares' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Ordinary Shares"
+                                placeholder="Ordinary Shares"}}
+
+                                {{> afQuickField name='preferenceShares' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Preference Shares"
+                                placeholder="Preference Shares"}}
+                                <!--// Amount Remaining to be Paid on Each Class:
+    -->
+                                {{> afQuickField name='ordinaryShares' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Ordinary Shares"
+                                placeholder="Ordinary Shares (Unpaid)"}}
+
+                                {{> afQuickField name='ordinaryShares' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Ordinary Shares"
+                                placeholder="Ordinary Shares (Due)"}}
+                                <!--preference shares-->
+                                {{> afQuickField name='preferenceShares' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Location of the Business, any land mark. It could be a church or school building"
+                                placeholder="Preference Shares (Unpaid)"}}
+
+                                {{> afQuickField name='preferenceShares' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Location of the Business, any land mark. It could be a church or school building"
+                                placeholder="Preference Shares (Due)"}}
+
+                                {{> afQuickField name='address' rows= 3 class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Address at which register of members is kept and maintained (if elsewhere specify)"
+                                placeholder="Address at which register of members is kept and maintained"}}
+
+                            </fieldset>
+                            <button type="submit" class="btn btn-primary txt2">Insert</button>
+                        {{/autoForm}}
+
+                        <div class="col-md-4 col-md-offset-6">
+                            <a type="submit" class="btn btn-primary txt2" href="{{pathFor 'companyDirectorSignature'}}">Next page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+</template>

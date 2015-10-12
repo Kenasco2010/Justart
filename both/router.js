@@ -52,80 +52,106 @@ Router.route('/signout', function(){
         }
     });
 
-Router.route('/create-company-profile', function() {
-        if (Meteor.user()){
-            this.render("companyRegProfile");
-        }
-        else{
-            Router.go("/sign-in")
-        }
+
+Router.route('/fill-company-registration-form/company-profile', function() {
+        this.render("companyRegProfile");
     },
     {
-        name:"companyRegProfile"
+        name:"companyRegProfile",
+        layoutTemplate: "dashboardLayout"
+
     });
-Router.route('/principal-place-of-business', function() {
+Router.route('/fill-company-registration-form/principal-place-of-business', function() {
         this.render("principalPlaceOfBusiness");
     },
     {
-        name:"principalPlaceOfBusiness"
+        name:"principalPlaceOfBusiness",
+        layoutTemplate: "dashboardLayout"
     });
-Router.route('/company-postal-address', function() {
+Router.route('/fill-company-registration-form/company-postal-address', function() {
         this.render("companyPostalAddress");
     },
     {
-        name:"companyPostalAddress"
+        name:"companyPostalAddress",
+        layoutTemplate: "dashboardLayout"
     });
-Router.route('/directors-particulars', function() {
+Router.route('/fill-company-registration-form/directors-particulars', function() {
         this.render("directorsParticulars");
     },
     {
-        name:"directorsParticulars"
+        name:"directorsParticulars",
+        layoutTemplate: "dashboardLayout"
     });
-Router.route('/secretary-particulars', function() {
+Router.route('/fill-company-registration-form/secretary-particulars', function() {
         this.render("secretarysParticulars");
     },
     {
-        name:"secretarysParticulars"
+        name:"secretarysParticulars",
+        layoutTemplate: "dashboardLayout"
     });
-Router.route('/corporate-secretary-particulars', function() {
+Router.route('/fill-company-registration-form/corporate-secretary-particulars', function() {
         this.render("corporateSecretarysParticulars");
     },
     {
-        name:"corporateSecretarysParticulars"
+        name:"corporateSecretarysParticulars",
+        layoutTemplate: "dashboardLayout"
     });
-Router.route('/company-auditor', function() {
+Router.route('/fill-company-registration-form/company-auditor', function() {
         this.render("companyAuditor");
     },
     {
-        name:"companyAuditor"
+        name:"companyAuditor",
+        layoutTemplate: "dashboardLayout"
     });
-Router.route('/company-capital', function() {
+Router.route('/fill-company-registration-form/company-capital', function() {
         this.render("companyCapitalDetails");
     },
     {
-        name:"companyCapitalDetails"
+        name:"companyCapitalDetails",
+        layoutTemplate: "dashboardLayout"
     });
-Router.route('/directors-signature', function() {
+Router.route('/fill-company-registration-form/directors-signature', function() {
         this.render("companyDirectorSignature");
     },
     {
-        name:"companyDirectorSignature"
+        name:"companyDirectorSignature",
+        layoutTemplate: "dashboardLayout"
     });
-Router.route('/secretary-signature', function() {
+Router.route('/fill-company-registration-form/secretary-signature', function() {
         this.render("companySecretarySignature");
     },
     {
-        name:"companySecretarySignature"
+        name:"companySecretarySignature",
+        layoutTemplate: "dashboardLayout"
     });
-Router.route('/sme-details', function() {
+Router.route('/fill-company-registration-form/sme-details', function() {
         this.render("smeDetails");
     },
     {
-        name:"smeDetails"
+        name:"smeDetails",
+        layoutTemplate: "dashboardLayout"
     });
-Router.route('/company-dashboard', function() {
+Router.route('/fill-company-registration-form/company-dashboard', function() {
         this.render("companyDashboardtwo");
     },
     {
         name:"companyDashboardtwo"
     });
+Router.route('/fill-company-registration-form/fill-form', function() {
+        this.render("home");
+    },
+    {
+        name:"home",
+        layoutTemplate: "dashboardLayout"
+
+    });
+
+Router.route('/company-registration-summary', function() {
+        this.render("RegistrationSummaryDocument");
+    },
+    {
+        name:"RegistrationSummaryDocument",
+        layoutTemplate: "dashboardLayout"
+
+    });
+
