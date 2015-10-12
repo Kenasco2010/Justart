@@ -129,3 +129,10 @@ Router.route('/company-dashboard', function() {
     {
         name:"companyDashboardtwo"
     });
+
+Router.route('/faq', function(){
+    this.render("faq");
+},
+{
+    name: "faq"
+});

@@ -1,4 +1,4 @@
-<template name="navigation">
+<template name="faq">
     <header class="main-header">
         <div class="auto-container clearfix">
             <!--Logo-->
@@ -46,7 +46,6 @@
                         <li class=""><a href="#">About</a></li>
                         <li class=""><a href="{{pathFor 'faq'}}">FAQ</a></li>
 
-
                         <!--<li class="dropdown"><a href="speakers.html">Speakers</a>-->
                         <!--<ul class="submenu">-->
                         <!--<li><a href="speakers.html">Speakers Style One</a></li>-->
@@ -88,4 +87,22 @@
 
         </div>
     </header>
+
+    <div class="container">
+    <div class="row row-heading">
+        <h3 class="howheading">How can we help you?</h3>
+        <div class="col-md-12">
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" placeholder="Search for help by topic, keywords or phrases" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </template>
