@@ -60,15 +60,46 @@ Template.dashboardNavigation.helpers({
 });
 
 Template.RegistrationSummaryDocument.helpers({
-    //CompanyRegistrationProfiles
-    //    PrincipalPlaceOfBusiness
-    //CompanyPostalAddress
-    //    DirectorParticulars
-    //CompanySecretary
-    //    CorporateSecretarys
-    //CompanyAuditors
-    //    CapitalDetails
-    //DirectorSignature
-    //    SecretarySignature
-    //SmeDetails
+    companyRegistrationProfile: function () {
+        //var id = CompanyRegistrationProfiles.params._id;
+        return CompanyRegistrationProfiles.find({"companyRegProOwner": Meteor.userId()}).fetch()
+    },
+    principalBusinessPlace: function () {
+        return PrincipalPlaceOfBusiness.find({"prPlaBusinessOwner": Meteor.userId()}).fetch()
+    },
+    companyPostalAdd: function () {
+        return CompanyPostalAddress.find({"postAddOwner": Meteor.userId()}).fetch()
+    },
+    directorPart: function () {
+        return DirectorParticulars.find({"dirPartOwner": Meteor.userId()}).fetch()
+    },
+    compSec: function () {
+        return CompanySecretary.find({"secOfCompOwner": Meteor.userId()}).fetch()
+    },
+    corpSec: function () {
+        return CorporateSecretarys.find({"corpsecOwner": Meteor.userId()}).fetch()
+    },
+    compAudit: function () {
+       return CompanyAuditors.find({"auditorOwner": Meteor.userId()}).fetch()
+    },
+    capDetails: function () {
+        return CapitalDetails.find({"capitalDetOwner": Meteor.userId()}).fetch()
+    },
+    dirSign: function () {
+        return DirectorSignature.find({"dirSignOwner": id}).fetch()
+    },
+    secSign: function () {
+        return SecretarySignature.find({"secSignOwner": Meteor.userId()}).fetch()
+
+    },
+    smeDetail: function () {
+        return SmeDetails.find({"smeDetOwner": Meteor.userId()}).fetch()
+
+    }
+
 });
+
+//DirectorSignature
+//    SecretarySignature
+//SmeDetails
+//CorporateSecretarys

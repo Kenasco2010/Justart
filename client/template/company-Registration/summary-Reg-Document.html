@@ -1,16 +1,875 @@
 <template name="RegistrationSummaryDocument">
 
-    <div id="wrapper">
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="heading">Summary of your Registration<span></span></h2>
+  <div id="wrapper">
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="heading">Summary of your Registration<span></span></h2>
+
+
+
+            <div class="dashboard-profile">
+              <body id="pages" class="full-layout  nav-right-hide nav-right-start-hide  nav-top-fixed      responsive    clearfix" data-active="pages "  data-smooth-scrolling="1">
+                <div class="vd_body">
+                  <!-- Header Start -->
+
+                  <!-- Header Ends -->
+                  <div class="content">
+                    <div class="container">
+
+                      <!-- Middle Content Start -->
+
+
+                      <div class="vd_content-section clearfix">
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <div class="panel widget light-widget panel-bd-top">
+                              <div class="panel-heading no-title"> </div>
+                              <div class="panel-body">
+                               {{#each companyRegistrationProfile}}
+
+                               <!--<div class="text-center vd_info-parent"> <img alt="example image" src="/images/big.jpg"> </div>-->
+                               {{#with FS.GetFile 'images' picture}}
+                               <img class="text-center vd_info-parent" src="{{this.url}}" alt="" >
+
+                               {{/with}}
+                               <div class="row">
+                                <div class="col-xs-12"> <a class="btn vd_btn vd_bg-green btn-xs btn-block no-br"><i class="fa fa-check-circle append-icon" ></i>Logo</a> </div>
+                                <!--<div class="col-xs-12"> <a class="btn vd_btn vd_bg-grey btn-xs btn-block no-br"><i class="fa fa-envelope append-icon"></i>Send Message</a> </div>-->
+                              </div>
+                              <h2 class="font-semibold mgbt-xs-5">{{nameOfCompany}}</h2>
+                              <h4>{{presentedBy}}.</h4>
+                              <p>{{principalActivity}}.</p>
+                              <div class="mgtp-20">
+                                <table class="table table-striped table-hover">
+                                  <tbody>
+                                    <tr>
+                                      <td style="width:60%;">Status</td>
+                                      <td><span class="label label-success">Active</span></td>
+                                    </tr>
+
+                                    <tr>
+                                      <td>Member Since</td>
+                                      <td> Jan 07, 2014 </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              {{/each}}
+                            </div>
+                          </div>
+                          <!-- panel widget -->
+
+
+                          <!-- panel widget -->
+                        </div>
+                        <div class="col-sm-9">
+                          <div class="tabs widget">
+                            <ul class="nav nav-tabs widget">
+                              <li class="active"> <a data-toggle="tab" href="pages-user-profile.php.html#profile-tab"> Company Profile <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                              <li> <a data-toggle="tab" href="pages-user-profile.php.html#projects-tab"> Bus. Particulars <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                              <li> <a data-toggle="tab" href="pages-user-profile.php.html#photos-tab"> Other particulars <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                              <li> <a data-toggle="tab" href="pages-user-profile.php.html#friends-tab"> Capital & SME Details <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                              <li> <a data-toggle="tab" href="pages-user-profile.php.html#groups-tab"> Signatures <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                            </ul>
+                            <div class="tab-content">
+                              <div id="profile-tab" class="tab-pane active">
+                                <div class="pd-20">
+                                  <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a> </div>
+                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold">COMPANY PROFILE</h3>
+                                  <div class="row">
+                                    {{#if companyRegistrationProfile}}
+                                    {{#each companyRegistrationProfile}}
+                                    <div class="col-sm-6 col-md-9">
+                                      <div class="row mgbt-xs-0">
+
+                                        <label class="col-xs-5 control-label profile-label-size">Company Name:</label>
+                                        <div class="col-xs-7 col-md-6 controls profile-content-size">{{nameOfCompany}}</div>
+                                        <br/>
+                                        <hr/>
+
+                                        <label class="col-xs-5 control-label profile-label-size">Presented By:</label>
+                                        <div class="col-xs-7 controls profile-content-size"> {{presentedBy}}</div>
+                                        <br/>
+                                        <hr/>
+
+                                        <label class="col-xs-5 control-label profile-label-size">Principal Activities:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{principalActivity}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">ISIC Code:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{iSICCode}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">House/Building/Flat:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{nameOrHouseNo}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Street:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{street}}</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">City:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{city}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">District:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{district}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Region:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{Region}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Ownership of Premises:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{ownershipOfPremises}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Landlord's Name:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{landlordsName}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <!-- col-sm-10 -->
+                                      </div>
+                                    </div>
+                                    {{/each}}
+                                    {{else}}
+                                    <h3>**Form hasn't been filled**</h3>
+                                    {{/if}}
+
+                                  </div>
+                                  <hr class="pd-10"  />
+
+                                  <!--SECOND SECTION OF COMPANY PROFILE-->
+                                  <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a> </div>
+
+                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold"> PRINCIPAL PLACE OF BUSINESS</h3>
+
+                                  <div class="row">
+                                    {{#if principalBusinessPlace}}
+                                    {{#each principalBusinessPlace}}
+                                    <div class="col-sm-6 col-md-9">
+                                      <div class="row mgbt-xs-0">
+
+                                        <label class="col-xs-5 control-label profile-label-size">House/Building/Flat:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{nameOHouseNo}}</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Street:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{street}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">City:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{city}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">District:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{district}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Region:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{Region}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Ownership of Premises:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{ownershipOfPremises}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Landlord's Name:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{landlordsName}}</div>
+                                        <br/>
+                                        <hr/>
+                                        <!-- col-sm-10 -->
+                                      </div>
+                                    </div>
+                                    {{/each}}
+                                    {{else}}
+                                    <h3>**Form hasn't been filled**</h3>
+                                    {{/if}}
+                                  </div>
+
+                                  <!-- END OF SECOND SECTION OF COMPANY PROFILE-->
+                                  <hr class="pd-10"  />
+
+                                  <!--END OF THIRD SECTION OF COMPANY PROFILE-->
+                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold">COMPANY POSTAL ADDRESS</h3>
+                                  <div class="row">
+                                    {{#if companyPostalAdd}}
+                                    {{#each companyPostalAdd}}
+                                    <div class="col-sm-6 col-md-9">
+                                      <div class="row mgbt-xs-0">
+
+                                        <label class="col-xs-5 control-label profile-label-size">C/O:</label>
+                                        <div class="col-xs-7 col-md-6 controls profile-content-size">{{careOf}}.</div>
+                                        <br/>
+                                        <hr/>
+
+                                        <label class="col-xs-5 control-label profile-label-size">Postal Type:</label>
+                                        <div class="col-xs-7 col-md-6 controls profile-content-size">{{postalType}}.</div>
+                                        <br/>
+                                        <hr/>
+
+                                        <label class="col-xs-5 control-label profile-label-size">Postal Number:</label>
+                                        <div class="col-xs-7 col-md-6 controls profile-content-size">{{city}}.</div>
+                                        <br/>
+                                        <hr/>
+
+                                        <label class="col-xs-5 control-label profile-label-size">City:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{city}}.</div>
+                                        <br/>
+                                        <hr/>
+
+                                        <label class="col-xs-5 control-label profile-label-size">District:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{district}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Region:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{Region}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Phone Number:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{phoneNo}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Mobile Number:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{mobileNo}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Fax:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{Fax}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Email:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{email}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Website:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{webiste}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <!-- col-sm-10 -->
+                                      </div>
+                                    </div>
+                                    {{/each}}
+                                    {{else}}
+                                    <h3>**Form hasn't been filled**</h3>
+                                    {{/if}}
+                                  </div>
+                                  <!--END OF THIRD SECTION OF COMPANY PROFILE-->
+                                  <!-- row -->
+                                  <hr class="pd-10"  />
+
+                                  <!-- row -->
+                                </div>
+                                <!-- pd-20 -->
+                              </div>
+                              <!-- home-tab -->
+
+                              <div id="projects-tab" class="tab-pane">
+                                <div class="pd-20">
+                                  <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-plus append-icon"></i> Add Project </a> </div>
+                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold"> DIRECTOR'S PARTICULARS</h3>
+                                  <table class="table table-striped table-hover">
+                                    {{#if directorPart}}
+                                    {{#each directorPart}}
+                                    <div class="col-sm-6 col-md-9">
+                                      <div class="row mgbt-xs-0">
+                                        <label class="col-xs-5 control-label profile-label-size">TIN</label>
+                                        <div class="col-xs-7 col-md-6 controls profile-content-size">{{TIN}}.</div>
+                                        <br/>
+                                        <hr/>
+
+                                        <label class="col-xs-5 control-label profile-label-size">First Name:</label>
+                                        <div class="col-xs-7 col-md-6 controls profile-content-size">{{firstName}}.</div>
+                                        <br/>
+                                        <hr/>
+
+                                        <label class="col-xs-5 control-label profile-label-size">Middle Name:</label>
+                                        <div class="col-xs-7 col-md-6 controls profile-content-size">{{middleName}}.</div>
+                                        <br/>
+                                        <hr/>
+
+                                        <label class="col-xs-5 control-label profile-label-size">Surname:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{surName}}.</div>
+                                        <br/>
+                                        <hr/>
+
+                                        <label class="col-xs-5 control-label profile-label-size">Age:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{age}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Any former Forename:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{foreName}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Nationality:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{nationality}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <br/>
+                                        Residential Address
+                                        <br/>
+                                        <label class="col-xs-5 control-label profile-label-size">House/Building/HouseNo:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{nameOHouseNo}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Street:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{street}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">City:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{city}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">District:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{district}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Region:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{Region}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Business Occupation:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{businessOccupation}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Particulars of Other Directorship:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{Directorships}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <!-- col-sm-10 -->
+                                      </div>
+
+                                    </div>
+                                    {{/each}}
+                                    {{else}}
+                                    <h3>**Form hasn't been filled**</h3>
+                                    {{/if}}
+
+                                  </table>
+                                  <div class="">
+                                  </div>
+                                </div>
+                                <hr/>
+
+                                <div class="pd-10">
+                                  <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-plus append-icon"></i> Add Project </a> </div>
+                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold"> SECRETARY'S PARTICULARS</h3>
+                                  <table class="table table-striped table-hover">
+                                    <div class="col-sm-6 col-md-9">
+                                      <div class="row mgbt-xs-0">
+                                        {{#if compSec}}
+                                        {{#each compSec}}
+                                        <label class="col-xs-5 control-label profile-label-size">TIN</label>
+                                        <div class="col-xs-7 col-md-6 controls profile-content-size">{{TIN}}.</div>
+                                        <br/>
+                                        <hr/>
+
+                                        <label class="col-xs-5 control-label profile-label-size">First Name:</label>
+                                        <div class="col-xs-7 col-md-6 controls profile-content-size">{{firstName}}.</div>
+                                        <br/>
+                                        <hr/>
+
+                                        <label class="col-xs-5 control-label profile-label-size">Middle Name:</label>
+                                        <div class="col-xs-7 col-md-6 controls profile-content-size">{{middleName}}.</div>
+                                        <br/>
+                                        <hr/>
+
+                                        <label class="col-xs-5 control-label profile-label-size">Surname:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{surName}}.</div>
+                                        <br/>
+                                        <hr/>
+
+                                        <label class="col-xs-5 control-label profile-label-size">Age:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{age}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Any former Forename:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{foreName}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Nationality:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{nationality}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <br/>
+                                        Residential Address
+                                        <br/>
+                                        <label class="col-xs-5 control-label profile-label-size">House/Building/HouseNo:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{nameOHouseNo}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Street:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{street}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">City:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{city}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">District:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{district}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Region:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{Region}}.</div>
+                                        <br/>
+                                        <hr/>
+                                        <label class="col-xs-5 control-label profile-label-size">Business Occupation:</label>
+                                        <div class="col-xs-7 controls profile-content-size">{{businessOccupation}}.</div>
+                                        <br/>
+                                        <hr/>
+
+                                        {{/each}}
+                                        {{else}}
+                                        <h3>**Form hasn't been filled**</h3>
+                                        {{/if}}
+                                        <!-- col-sm-10 -->
+                                      </div>
+                                    </div>
+
+                                  </table>
+                                  <div class="">
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div id="photos-tab" class="tab-pane">
+                                <div class="pd-20">
+                                  <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-plus append-icon"></i> Add Photo </a> </div>
+                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold">INCASE OF CORPORATE BODY ACTING AS SECRETARY</h3>
+                                  <ul id="filters" class="nav nav-pills">
+
+                                  </ul>
+                                  <br/>
+                                  <div class="col-sm-6 col-md-9">
+                                    <div class="row mgbt-xs-0">
+                                      {{#if corpSec}}
+                                      {{#each corpSec}}
+                                      <label class="col-xs-5 control-label profile-label-size">Corporate Name</label>
+                                      <div class="col-xs-7 col-md-6 controls profile-content-size">{{corporateName}}.</div>
+                                      <br/>
+                                      <hr/>
+
+                                      <label class="col-xs-5 control-label profile-label-size">Corporate Add.(H/No):</label>
+                                      <div class="col-xs-7 col-md-6 controls profile-content-size">{{corporateAddress}}.</div>
+                                      <br/>
+                                      <hr/>
+
+                                      <!-- <label class="col-xs-5 control-label profile-label-size">P.o.box/DTD/PMB:</label>
+                                      <div class="col-xs-7 col-md-6 controls profile-content-size">{{}}.</div>
+                                      <br/>
+                                      <hr/> -->
+
+                                      <label class="col-xs-5 control-label profile-label-size">Corporate Stamp:</label>
+                                      <div class="col-xs-7 controls profile-content-size">{{corporateStamp}}.</div>
+                                      <br/>
+                                      <hr/>
+
+                                      <label class="col-xs-5 control-label profile-label-size">Corporate TIN:</label>
+                                      <div class="col-xs-7 controls profile-content-size">{{corporateTIN}}.</div>
+                                      <br/>
+                                      <hr/>
+                                      <label class="col-xs-5 control-label profile-label-size">Corporate Representative:</label>
+                                      <div class="col-xs-7 controls profile-content-size">{{corporateRep}}.</div>
+                                      <br/>
+                                      <hr/>
+                                      <label class="col-xs-5 control-label profile-label-size">TIN of Representative:</label>
+                                      <div class="col-xs-7 controls profile-content-size">{{RepTIN}}.</div>
+                                      <br/>
+                                      <hr/>
+                                      <label class="col-xs-5 control-label profile-label-size">Corporate Signature:</label>
+                                      <div class="col-xs-7 controls profile-content-size">{{picture}}.</div>
+                                      <br/>
+                                      <hr/>
+
+                                      <!-- col-sm-10 -->
+                                      {{/each}}
+                                      {{else}}
+                                      <h3>**Form hasn't been filled**</h3>
+                                      {{/if}}
+                                    </div>
+                                  </div>
+
+                                  <div class="clearfix"></div>
+
+                                </div>
+                                <!-- pd-20 -->
+                                <div class="pd-20">
+                                  <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-plus append-icon"></i> Add Photo </a> </div>
+                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold">PARTICULARS OF AUDITOR</h3>
+                                  <ul id="filters" class="nav nav-pills">
+
+                                  </ul>
+                                  <br/>
+                                  <div class="col-sm-6 col-md-9">
+                                    <div class="row mgbt-xs-0">
+                                      {{#if compAudit}}
+                                      {{#each compAudit}}
+
+                                      <label class="col-xs-5 control-label profile-label-size">TIN:</label>
+                                      <div class="col-xs-7 col-md-6 controls profile-content-size">{{TIN}}.</div>
+                                      <br/>
+                                      <hr/>
+
+                                      <label class="col-xs-5 control-label profile-label-size">Auditor's Firm Name:</label>
+                                      <div class="col-xs-7 col-md-6 controls profile-content-size">{{auditorsFirmName}}.</div>
+                                      <br/>
+                                      <hr/>
+
+                                      <label class="col-xs-5 control-label profile-label-size">Auditor's Firm Add.:</label>
+                                      <div class="col-xs-7 col-md-6 controls profile-content-size">{{auditorsFirmAddress}}.</div>
+                                      <br/>
+                                      <hr/>
+
+                                      <label class="col-xs-5 control-label profile-label-size">PMB/DTD:</label>
+                                      <div class="col-xs-7 controls profile-content-size">{{PMBOrDTD}}.</div>
+                                      <br/>
+                                      <hr/>
+
+                                      <label class="col-xs-5 control-label profile-label-size">House/Building/flat:</label>
+                                      <div class="col-xs-7 controls profile-content-size">{{NameOrHouseNo}}.</div>
+                                      <br/>
+                                      <hr/>
+                                      <label class="col-xs-5 control-label profile-label-size">street:</label>
+                                      <div class="col-xs-7 controls profile-content-size">{{street}}.</div>
+                                      <br/>
+                                      <hr/>
+                                      <label class="col-xs-5 control-label profile-label-size">City:</label>
+                                      <div class="col-xs-7 controls profile-content-size">{{city}}.</div>
+                                      <br/>
+                                      <hr/>
+                                      <label class="col-xs-5 control-label profile-label-size">District:</label>
+                                      <div class="col-xs-7 controls profile-content-size">{{district}}.</div>
+                                      <br/>
+                                      <hr/>
+                                      <label class="col-xs-5 control-label profile-label-size">Region:</label>
+                                      <div class="col-xs-7 controls profile-content-size">{{Region}}.</div>
+                                      <br/>
+                                      <hr/>
+                                      <label class="col-xs-5 control-label profile-label-size">auditor's Mobile No:</label>
+                                      <div class="col-xs-7 controls profile-content-size">{{auditorsMobileNo}}.</div>
+                                      <br/>
+                                      <hr/>
+                                      <label class="col-xs-5 control-label profile-label-size">Auditor's Office No:</label>
+                                      <div class="col-xs-7 controls profile-content-size">{{auditorsOfficeNo}}.</div>
+                                      <br/>
+                                      <hr/>
+                                      {{/each}}
+                                      {{else}}
+                                      <h3>**Form hasn't been filled**</h3>
+                                      {{/if}}
+                                      <!-- col-sm-10 -->
+                                    </div>
+                                  </div>
+
+                                  <div class="clearfix"></div>
+
+                                </div>
+                              </div> <!-- photos tab -->
+                              <div id="friends-tab" class="tab-pane">
+                                <div class="pd-20">
+
+                                  <div class="content-grid column-xs-3 column-sm-4 column-md-4 column-lg-6 height-xs-4 mgbt-xs-20">
+                                    <div>
+                                      <ul class="list-wrapper">
+
+                                        <div class="pd-10">
+                                          <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-plus append-icon"></i> Add Project </a> </div>
+                                          <h3 class="mgbt-xs-15 mgtp-10 font-semibold">CAPITAL DETAILS</h3>
+                                          <table class="table table-striped table-hover">
+                                            <div class="col-sm-6 col-md-9">
+                                              <div class="row mgbt-xs-0">
+                                                {{#if capDetails}}
+                                                {{#each capDetails}}
+
+                                                <label class="col-xs-5 control-label profile-label-size">Authorised Shares</label>
+                                                <div class="col-xs-7 col-md-6 controls profile-content-size">{{authorisedShares}}.</div>
+                                                <br/>
+                                                <hr/>
+
+                                                <label class="col-xs-5 control-label profile-label-size">Stated Capital:</label>
+                                                <div class="col-xs-7 col-md-6 controls profile-content-size">{{statedCapital}}.</div>
+                                                <br/>
+                                                <hr/>
+                                                <h4><strong><u>company Share if any</u></strong></h4><br/>
+                                                <h4>* Number of Authorised Shares of Each Class</h4>
+                                                <br/>
+
+
+                                                <label class="col-xs-5 control-label profile-label-size">Ordinary Shares:</label>
+                                                <div class="col-xs-7 col-md-6 controls profile-content-size">{{ordinaryShares}}.</div>
+                                                <br/>
+                                                <hr/>
+
+                                                <label class="col-xs-5 control-label profile-label-size">Preference Shares:</label>
+                                                <div class="col-xs-7 controls profile-content-size">{{preferenceShares}}.</div>
+                                                <br/>
+                                                <hr/>
+                                                <h4>* Number of Issued Shares of Each Class</h4>
+                                                <br/>
+
+                                                <label class="col-xs-5 control-label profile-label-size">Ordinary Shares:</label>
+                                                <div class="col-xs-7 controls profile-content-size">{{ordinaryShares}}.</div>
+                                                <br/>
+                                                <hr/>
+                                                <label class="col-xs-5 control-label profile-label-size">Preference Shares:</label>
+                                                <div class="col-xs-7 controls profile-content-size">{{preferenceShares}}.</div>
+                                                <br/>
+                                                <hr/>
+                                                <h4>* Amount Paid in Cash of Each Class</h4>
+                                                <br/>
+                                                <label class="col-xs-5 control-label profile-label-size">Ordinary Shares:</label>
+                                                <div class="col-xs-7 controls profile-content-size">{{ordinaryShares}}.</div>
+                                                <br/>
+                                                <hr/>
+                                                <label class="col-xs-5 control-label profile-label-size">Preference Shares:</label>
+                                                <div class="col-xs-7 controls profile-content-size">{{preferenceShares}}.</div>
+                                                <br/>
+                                                <hr/>
+                                                <h4>* Amount Paid otherwise than in Cash of Each Class</h4>
+                                                <br/>
+                                                <label class="col-xs-5 control-label profile-label-size">Ordinary Shares:</label>
+                                                <div class="col-xs-7 controls profile-content-size">{{ordinaryShares}}.</div>
+                                                <br/>
+                                                <hr/>
+                                                <label class="col-xs-5 control-label profile-label-size">Preference Shares:</label>
+                                                <div class="col-xs-7 controls profile-content-size">{{preferenceShares}}.</div>
+                                                <br/>
+                                                <hr/>
+                                                <h4>* Amount remainig to be paid on Each Class</h4>
+                                                <br/>
+                                                <label class="col-xs-5 control-label profile-label-size">Ordinary Shares(Unpaid):</label>
+                                                <div class="col-xs-7 controls profile-content-size">{{ordinaryShares}}.</div>
+                                                <br/>
+                                                <hr/>
+                                                <label class="col-xs-5 control-label profile-label-size">Ordinary Shares(Due):</label>
+                                                <div class="col-xs-7 controls profile-content-size">{{ordinaryShares}}.</div>
+                                                <br/>
+                                                <hr/>
+                                                <label class="col-xs-5 control-label profile-label-size">Preference Shares(Unpaid):</label>
+                                                <div class="col-xs-7 controls profile-content-size">{{preferenceShares}}.</div>
+                                                <br/>
+                                                <hr/>
+                                                <label class="col-xs-5 control-label profile-label-size">Preference Shares(Due):</label>
+                                                <div class="col-xs-7 controls profile-content-size">{{preferenceShares}}.</div>
+                                                <br/>
+                                                <hr/>
+                                                <label class="col-xs-5 control-label profile-label-size">Address:</label>
+                                                <div class="col-xs-7 controls profile-content-size">{{address}}.</div>
+                                                <br/>
+                                                <hr/>
+                                                {{/each}}
+                                                {{else}}
+                                                <h3>**Form hasn't been filled**</h3>
+                                                {{/if}}
+                                                <!-- col-sm-10 -->
+                                              </div>
+                                            </div>
+
+                                          </table>
+                                          <div class="">
+                                          </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="pd-10">
+                                          <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-plus append-icon"></i> Add Project </a> </div>
+                                          <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="fa fa-bolt mgr-10 profile-icon"></i> SME DETAILS</h3>
+                                          <table class="table table-striped table-hover">
+                                            <div class="col-sm-6 col-md-9">
+                                              <div class="row mgbt-xs-0">
+                                                {{#if smeDetail}}
+                                                {{#each smeDetail}}
+
+                                                <label class="col-xs-5 control-label profile-label-size">No of Emp. Envisaged:</label>
+                                                <div class="col-xs-7 col-md-6 controls profile-content-size">{{noOfEmployees}}.</div>
+                                                <br/>
+                                                <hr/>
+
+                                                <label class="col-xs-5 control-label profile-label-size">Revenue Envisaged:</label>
+                                                <div class="col-xs-7 col-md-6 controls profile-content-size">{{revenueEnvisaged}}.</div>
+                                                <br/>
+                                                <hr/>
+                                                {{/each}}
+                                                {{else}}
+                                                <h3>**Form hasn't been filled**</h3>
+                                                {{/if}}
+
+                                                <!-- col-sm-10 -->
+                                              </div>
+                                            </div>
+
+                                          </table>
+                                          <div class="">
+                                          </div>
+                                        </div>
+
+
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div><!-- pd-20 -->
+                              </div>  <!-- photos tab -->
+                              <hr/>
+                              <div id="groups-tab" class="tab-pane">
+                                <div class="pd-20">
+                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="fa fa-leaf mgr-10 profile-icon"></i> DIRECTOR SIGNATURES</h3>
+                                  <div class="row">
+                                    <div class="panel-body">
+                                      {{#if dirSign}}
+                                      {{#each dirSign}}
+                                      <!--<div class="text-center vd_info-parent"> <img alt="example image" src="/images/big.jpg"> </div>-->
+                                      {{#with FS.GetFile 'images' picture}}
+                                      <img class="text-center vd_info-parent"  width="300px" height="400px" src="{{this.url}}" alt="" >
+                                      {{/with}}
+                                      <h2 class="font-semibold mgbt-xs-5">{{directorName}}</h2>
+                                      {{/each}}
+                                      {{else}}
+                                      No Signature Yet
+                                      {{/if}}
+                                    </div>
+
+                                  </div> <!-- row -->
+                                </div> <!-- pd-20 -->
+                                <div class="pd-20">
+                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="fa fa-leaf mgr-10 profile-icon"></i> SECRETARY SIGNATURES</h3>
+                                  <div class="row">
+                                    <div class="panel-body">
+                                      {{#if secSign}}
+                                      {{#each secSign}}
+                                      <!--<div class="text-center vd_info-parent"> <img alt="example image" src="/images/big.jpg"> </div>-->
+                                      {{#with FS.GetFile 'images' picture}}
+                                      <img class="text-center vd_info-parent"  width="300px" height="400px" src="{{this.url}}" alt="" >
+
+                                      {{/with}}
+                                      <h2 class="font-semibold mgbt-xs-5">{{secretaryName}}</h2>
+                                      {{/each}}
+                                      {{else}}
+                                      No Signature Yet
+                                      {{/if}}
+                                    </div>
+
+                                  </div> <!-- row -->
+                                </div>
+                              </div>  <!-- groups tab -->
+
+                            </div>
+                            <!-- tab-content -->
+                          </div>
+                          <!-- tabs-widget -->              </div>
+                        </div>
+                        <!-- row -->
+
+                      </div>
+                      <!-- .vd_content-section -->
+
+
+                      <!-- .vd_content -->
                     </div>
+                    <!-- .vd_container -->
+                  </div>
+                  <!-- .vd_content-wrapper -->
+
+                  <!-- Middle Content End -->
+
                 </div>
-            </div>
+                <!-- .container -->
+
+                <!-- .content -->
+
+                <!-- Footer Start -->
+
+                <!-- Footer END -->
+
+
+
+
+                <!-- .vd_body END  -->
+                <a id="back-top" href="pages-user-profile.php.html#" data-action="backtop" class="vd_back-top visible"> <i class="fa  fa-angle-up"> </i> </a>
+
+                <script type="text/javascript">
+                  $(document).ready(function() {
+                    "use strict";
+
+                                // init Isotope
+                                var $container = $('.isotope').isotope({
+                                  itemSelector: '.gallery-item',
+                                  layoutMode: 'fitRows'
+                                });
+
+
+                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                  $container.isotope('layout');
+                                });
+
+                                // bind filter button click
+                                $('#filters').on( 'click', 'a', function() {
+                                  var filterValue = $( this ).attr('data-filter');
+                                  $('#filters li').removeClass('active');
+                                  $(this).parent().addClass('active');
+                                  $container.isotope({ filter: filterValue });
+                                });
+
+
+                              });
+</script>
+<!-- Specific Page Scripts END -->
+
+
+
+
+<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
+
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-43329142-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+</body>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<!-- /#page-content-wrapper -->
+</div>
+
+
+<div id="wrapper">
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <pre>
+           <p align="center"><strong>IMPORTANT NOTICE!</strong></p>
+           *You won't be allowed to Register another company with the same signup Email.
+           * Please make sure you have read through your application and you are very sure of the
+           details before you submit.
+           * You will get a notification in your email and text message as soon as we receive your application.
+           * We will call you as soon as your Status changes to Done. It would take 7 working days.
+
+         </pre>
+         <div align="center">
+          <a href="#" class="btn btn-primary txt2" type="submit">Submit Data To Justart</a>
         </div>
-        <!-- /#page-content-wrapper -->
+      </div>
     </div>
+  </div>
+</div>
+<!-- /#page-content-wrapper -->
+</div>
+
+
 </template>
