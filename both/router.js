@@ -53,6 +53,14 @@ Router.route('/signout', function(){
     });
 
 
+Router.route('/faq', function(){
+    this.render("faq");
+},
+{
+    name: "faq"
+});
+
+
 Router.route('/fill-company-registration-form/company-profile', function() {
         this.render("companyRegProfile");
     },
@@ -137,6 +145,7 @@ Router.route('/fill-company-registration-form/company-dashboard', function() {
     {
         name:"companyDashboardtwo"
     });
+
 Router.route('/fill-company-registration-form/fill-form', function() {
         this.render("home");
     },
