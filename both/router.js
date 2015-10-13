@@ -52,83 +52,6 @@ Router.route('/signout', function(){
         }
     });
 
-Router.route('/create-company-profile', function() {
-        if (Meteor.user()){
-            this.render("companyRegProfile");
-        }
-        else{
-            Router.go("/sign-in")
-        }
-    },
-    {
-        name:"companyRegProfile"
-    });
-Router.route('/principal-place-of-business', function() {
-        this.render("principalPlaceOfBusiness");
-    },
-    {
-        name:"principalPlaceOfBusiness"
-    });
-Router.route('/company-postal-address', function() {
-        this.render("companyPostalAddress");
-    },
-    {
-        name:"companyPostalAddress"
-    });
-Router.route('/directors-particulars', function() {
-        this.render("directorsParticulars");
-    },
-    {
-        name:"directorsParticulars"
-    });
-Router.route('/secretary-particulars', function() {
-        this.render("secretarysParticulars");
-    },
-    {
-        name:"secretarysParticulars"
-    });
-Router.route('/corporate-secretary-particulars', function() {
-        this.render("corporateSecretarysParticulars");
-    },
-    {
-        name:"corporateSecretarysParticulars"
-    });
-Router.route('/company-auditor', function() {
-        this.render("companyAuditor");
-    },
-    {
-        name:"companyAuditor"
-    });
-Router.route('/company-capital', function() {
-        this.render("companyCapitalDetails");
-    },
-    {
-        name:"companyCapitalDetails"
-    });
-Router.route('/directors-signature', function() {
-        this.render("companyDirectorSignature");
-    },
-    {
-        name:"companyDirectorSignature"
-    });
-Router.route('/secretary-signature', function() {
-        this.render("companySecretarySignature");
-    },
-    {
-        name:"companySecretarySignature"
-    });
-Router.route('/sme-details', function() {
-        this.render("smeDetails");
-    },
-    {
-        name:"smeDetails"
-    });
-Router.route('/company-dashboard', function() {
-        this.render("companyDashboardtwo");
-    },
-    {
-        name:"companyDashboardtwo"
-    });
 
 Router.route('/faq', function(){
     this.render("faq");
@@ -136,3 +59,108 @@ Router.route('/faq', function(){
 {
     name: "faq"
 });
+
+
+Router.route('/fill-company-registration-form/company-profile', function() {
+        this.render("companyRegProfile");
+    },
+    {
+        name:"companyRegProfile",
+        layoutTemplate: "dashboardLayout"
+
+    });
+Router.route('/fill-company-registration-form/principal-place-of-business', function() {
+        this.render("principalPlaceOfBusiness");
+    },
+    {
+        name:"principalPlaceOfBusiness",
+        layoutTemplate: "dashboardLayout"
+    });
+Router.route('/fill-company-registration-form/company-postal-address', function() {
+        this.render("companyPostalAddress");
+    },
+    {
+        name:"companyPostalAddress",
+        layoutTemplate: "dashboardLayout"
+    });
+Router.route('/fill-company-registration-form/directors-particulars', function() {
+        this.render("directorsParticulars");
+    },
+    {
+        name:"directorsParticulars",
+        layoutTemplate: "dashboardLayout"
+    });
+Router.route('/fill-company-registration-form/secretary-particulars', function() {
+        this.render("secretarysParticulars");
+    },
+    {
+        name:"secretarysParticulars",
+        layoutTemplate: "dashboardLayout"
+    });
+Router.route('/fill-company-registration-form/corporate-secretary-particulars', function() {
+        this.render("corporateSecretarysParticulars");
+    },
+    {
+        name:"corporateSecretarysParticulars",
+        layoutTemplate: "dashboardLayout"
+    });
+Router.route('/fill-company-registration-form/company-auditor', function() {
+        this.render("companyAuditor");
+    },
+    {
+        name:"companyAuditor",
+        layoutTemplate: "dashboardLayout"
+    });
+Router.route('/fill-company-registration-form/company-capital', function() {
+        this.render("companyCapitalDetails");
+    },
+    {
+        name:"companyCapitalDetails",
+        layoutTemplate: "dashboardLayout"
+    });
+Router.route('/fill-company-registration-form/directors-signature', function() {
+        this.render("companyDirectorSignature");
+    },
+    {
+        name:"companyDirectorSignature",
+        layoutTemplate: "dashboardLayout"
+    });
+Router.route('/fill-company-registration-form/secretary-signature', function() {
+        this.render("companySecretarySignature");
+    },
+    {
+        name:"companySecretarySignature",
+        layoutTemplate: "dashboardLayout"
+    });
+Router.route('/fill-company-registration-form/sme-details', function() {
+        this.render("smeDetails");
+    },
+    {
+        name:"smeDetails",
+        layoutTemplate: "dashboardLayout"
+    });
+Router.route('/fill-company-registration-form/company-dashboard', function() {
+        this.render("companyDashboardtwo");
+    },
+    {
+        name:"companyDashboardtwo"
+    });
+
+Router.route('/fill-company-registration-form/fill-form', function() {
+        this.render("home");
+    },
+    {
+        name:"home",
+        layoutTemplate: "dashboardLayout"
+
+    });
+
+Router.route('/company-registration-summary', function() {
+        this.render("RegistrationSummaryDocument");
+    },
+    {
+        name:"RegistrationSummaryDocument",
+        layoutTemplate: "dashboardLayout"
+
+    });
+

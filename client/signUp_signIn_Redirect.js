@@ -3,12 +3,12 @@ var mySubmitFunc = function(error, state){
     if (!error) {
         if (state === "signIn") {
             Router.go('/');
-            sAlert.info('Welcome Back!');
+            swal('Welcome back!, we appreciate you');
 
         }
         if (state === "signUp"){
             Router.go('/');
-            sAlert.info('Welcome to Justart!');
+            swal('Welcome, Justart helps you find comfort');
 
         }
     }
