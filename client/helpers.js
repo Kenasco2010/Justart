@@ -97,7 +97,8 @@ Template.RegistrationSummaryDocument.helpers({
 
 
   });
-Template.UpdateCompRegProfile.helpers({
+//UPDATE
+Template.updateCompRegProfile.helpers({
   updateCompRegDoc: function(){
     return CompanyRegistrationProfiles.findOne(Session.get("updateCompRegDoc"));
   },
@@ -105,7 +106,53 @@ Template.UpdateCompRegProfile.helpers({
         return CompanyRegistrationProfiles.findOne(Session.get("updateCompRegDoc"));
     }
 });
-//DirectorSignature
-//    SecretarySignature
-//SmeDetails
-//CorporateSecretarys
+Template.updatePrincipalPlaceOfBusiness.helpers({
+    autoUpdatePrincBusDoc: function () {
+        return PrincipalPlaceOfBusiness.findOne(Session.get("updatePrincBusDoc"));
+    }
+});
+Template.updateCompanyPostalAddress.helpers({
+    autoUpdateCompPostAdd: function () {
+        return CompanyPostalAddress.findOne(Session.get("updatecompPostAddDoc"));
+    }
+});
+Template.updateDirectorsParticulars.helpers({
+    autoUpdatedirectorPart: function () {
+        return DirectorParticulars.findOne(Session.get("updateDirectorPartDoc"));
+    }
+});
+Template.updateSecretarysParticulars.helpers({
+    autoUpdatesecretaryPart: function () {
+        return CompanySecretary.findOne(Session.get("updateSecretaryPartDoc"));
+    }
+});
+Template.updateCorporateSecretarysParticulars.helpers({
+    autoUpdatecorpsecretaryPart: function () {
+        return CorporateSecretarys.findOne(Session.get("updateCorpSecretaryPartDoc"));
+    }
+});
+Template.updateCompanyAuditor.helpers({
+    autoUpdatecompAuditorDoc: function () {
+        return CompanyAuditors.findOne(Session.get("updateCompAuditorDoc"));
+    }
+});
+Template.updateCompanyCapitalDetails.helpers({
+    autoUpdateCapitalDetailDoc: function () {
+        return CapitalDetails.findOne(Session.get("updateCapitalDetailsDoc"));
+    }
+});
+Template.updateCompanyDirectorSignature.helpers({
+    autoUpdatedirSignDoc: function () {
+        return DirectorSignature.findOne(Session.get("updateDirSignDoc"));
+    }
+});
+Template.updateCompanySecretarySignature.helpers({
+    autoUpdatesecSignDoc: function () {
+        return SecretarySignature.findOne(Session.get("updateSecSignDoc"));
+    }
+});
+Template.updateSmeDetails.helpers({
+    autoUpdateSmeDetailsDoc: function () {
+        return SmeDetails.findOne(Session.get("updatesmeDetailsDoc"));
+    }
+});

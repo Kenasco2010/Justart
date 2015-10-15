@@ -1,0 +1,67 @@
+<template name="updateCompanyAuditor">
+    <div id="wrapper">
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        {{#autoForm collection="CompanyAuditors" id="updateCompanyAuditorsForm" doc=autoUpdatecompAuditorDoc type="update"}}
+                            <fieldset>
+                                <h2 class="heading">Update Company Auditor Details<span></span></h2>
+
+                                {{> afQuickField name='TIN' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Tax Identification Number of the auditor E.g GHTax 232220"
+                                placeholder="TIN of the auditor"}}
+
+                                {{> afQuickField name='auditorsFirmName' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="The name of the Auditor's audit firm E.g PWC"
+                                placeholder="Name of the Auditor's audit firm"}}
+
+                                {{> afQuickField name='auditorsFirmAddress' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="The address of the Auditor's audit firm E.g 23 floor,Marina House, Airport."
+                                placeholder="Address of the Auditor's audit firm"}}
+
+                                {{> afQuickField name='PMBOrDTD' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Post Mail Box of the auditor, if any"
+                                placeholder="Enter PMB or DTD"}}
+
+                                {{> afQuickField name='NameOrHouseNo' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="House Number, If different from the one above"
+                                placeholder= "Enter House number of auditor"}}
+
+                                {{> afQuickField name='street' data-toggle="btnToolTip" class="txt"
+                                data-placement="right" title="Street name where the auditor's firm is located" placeholder="Street name where auditor's firm is located"}}
+
+                                {{> afQuickField name='city' data-toggle="btnToolTip" class="txt"
+                                data-placement="right" title="City where audit firm is situated"
+                                placeholder="City where audit firm is situated"}}
+
+                                {{> afQuickField name='district' data-toggle="btnToolTip" class="txt"
+                                data-placement="right" title="District where audit firm is situated"
+                                placeholder="District where audit firm is situated"}}
+
+                                {{> afQuickField name='Region' data-toggle="btnToolTip" class="txt"
+                                data-placement="right" title="Region where audit firm is situated and established"
+                                placeholder="Region where audit firm is situated"}}
+
+                                {{> afQuickField name='auditorsMobileNo' data-toggle="btnToolTip" class="txt"
+                                data-placement="right" title="Enter auditor's phone number"
+                                placeholder="Enter auditor's phone number "}}
+
+                                {{> afQuickField name='auditorsOfficeNo' data-toggle="btnToolTip" class="txt"
+                                data-placement="right" title="Office number of auditor"
+                                placeholder="Enter auditor's office number"}}
+
+                            </fieldset>
+                            <button type="submit" class="btn btn-primary txt2">Update</button>
+                        {{/autoForm}}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+</template>

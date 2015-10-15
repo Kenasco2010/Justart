@@ -183,10 +183,90 @@ Router.route('/company-registration-summary', function() {
 
 /*UPDATE FORMS*/
 Router.route('/fill-company-registration-form/update-company-profile', function() {
-        this.render("UpdateCompRegProfile");
+        this.render("updateCompRegProfile");
     },
     {
-        name:"UpdateCompRegProfile",
+        name:"updateCompRegProfile",
+        layoutTemplate: "dashboardLayout"
+
+    });
+Router.route('/fill-company-registration-form/update-principal-business-place', function() {
+        this.render("updatePrincipalPlaceOfBusiness");
+    },
+    {
+        name:"updatePrincipalPlaceOfBusiness",
+        layoutTemplate: "dashboardLayout"
+
+    });
+Router.route('/fill-company-registration-form/update-company-postal-address', function() {
+        this.render("updateCompanyPostalAddress");
+    },
+    {
+        name:"updateCompanyPostalAddress",
+        layoutTemplate: "dashboardLayout"
+
+    });
+Router.route('/fill-company-registration-form/update-director-particulars', function() {
+        this.render("updateDirectorsParticulars");
+    },
+    {
+        name:"updateDirectorsParticulars",
+        layoutTemplate: "dashboardLayout"
+
+    });
+Router.route('/fill-company-registration-form/update-secretary-particulars', function() {
+        this.render("updateSecretarysParticulars");
+    },
+    {
+        name:"updateSecretarysParticulars",
+        layoutTemplate: "dashboardLayout"
+
+    });
+Router.route('/fill-company-registration-form/update-corporate-secretary-particulars', function() {
+        this.render("updateCorporateSecretarysParticulars");
+    },
+    {
+        name:"updateCorporateSecretarysParticulars",
+        layoutTemplate: "dashboardLayout"
+
+    });
+Router.route('/fill-company-registration-form/update-company-auditor-particulars', function() {
+        this.render("updateCompanyAuditor");
+    },
+    {
+        name:"updateCompanyAuditor",
+        layoutTemplate: "dashboardLayout"
+
+    });
+Router.route('/fill-company-registration-form/update-company-capital-details', function() {
+        this.render("updateCompanyCapitalDetails");
+    },
+    {
+        name:"updateCompanyCapitalDetails",
+        layoutTemplate: "dashboardLayout"
+
+    });
+Router.route('/fill-company-registration-form/update-director-signature', function() {
+        this.render("updateCompanyDirectorSignature");
+    },
+    {
+        name:"updateCompanyDirectorSignature",
+        layoutTemplate: "dashboardLayout"
+
+    });
+Router.route('/fill-company-registration-form/update-secretary-signature', function() {
+        this.render("updateCompanySecretarySignature");
+    },
+    {
+        name:"updateCompanySecretarySignature",
+        layoutTemplate: "dashboardLayout"
+
+    });
+Router.route('/fill-company-registration-form/update-sme-details', function() {
+        this.render("updateSmeDetails");
+    },
+    {
+        name:"updateSmeDetails",
         layoutTemplate: "dashboardLayout"
 
     });

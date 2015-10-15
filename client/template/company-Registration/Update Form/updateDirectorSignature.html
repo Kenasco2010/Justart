@@ -1,0 +1,30 @@
+<template name="updateCompanyDirectorSignature">
+    <div id="wrapper">
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+
+
+                        {{#autoForm collection="DirectorSignature" id="updateDirectorSignatureForm" doc=autoUpdatedirSignDoc type="update"}}
+                            <fieldset>
+                                <h2 class="heading">Update Company Director Signature <span></span></h2>
+
+                                {{> afQuickField name='directorName' data-toggle="btnToolTip" class="txt"
+                                data-placement="right" title="The main aim of the business you are setting up"}}
+                                <h4>Upload Your Signature</h4>
+                                {{> afQuickField name="picture" }}
+
+
+                            </fieldset>
+                            <button type="submit" class="btn btn-primary txt2">Update</button>
+                        {{/autoForm}}
+
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+    </div>
+</template>

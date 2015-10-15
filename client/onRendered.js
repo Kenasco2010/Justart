@@ -243,10 +243,81 @@ Template.signin.rendered = function () {
     $('button[type=submit]').addClass('txtRegister');
 };
 
-Template.UpdateCompRegProfile.rendered = function () {
-    CompRegProfHasData = CompanyRegistrationProfiles.findOne({"companyRegProOwner": Meteor.userId()});
+//pulling data into update form
+Template.updateCompRegProfile.rendered = function () {
+    var CompRegProfHasData = CompanyRegistrationProfiles.findOne({"companyRegProOwner": Meteor.userId()});
     if (CompRegProfHasData){
         Session.set("updateCompRegDoc", CompRegProfHasData._id);
+
+    }
+};
+Template.updatePrincipalPlaceOfBusiness.rendered = function () {
+   var PrincipalBusinessHasData = PrincipalPlaceOfBusiness.findOne({"prPlaBusinessOwner": Meteor.userId()});
+    if (PrincipalBusinessHasData){
+        Session.set("updatePrincBusDoc", PrincipalBusinessHasData._id);
+
+    }
+};
+Template.updateCompanyPostalAddress.rendered = function () {
+    var compPostAddHasData = CompanyPostalAddress.findOne({"postAddOwner": Meteor.userId()});
+    if (compPostAddHasData){
+        Session.set("updatecompPostAddDoc", compPostAddHasData._id);
+
+    }
+};
+Template.updateDirectorsParticulars.rendered = function () {
+    var directorPartHasData = DirectorParticulars.findOne({"dirPartOwner": Meteor.userId()});
+    if (directorPartHasData){
+        Session.set("updateDirectorPartDoc", directorPartHasData._id);
+
+    }
+};
+Template.updateSecretarysParticulars.rendered = function () {
+    var secretaryPartHasData = CompanySecretary.findOne({"secOfCompOwner": Meteor.userId()});
+    if (secretaryPartHasData){
+        Session.set("updateSecretaryPartDoc", secretaryPartHasData._id);
+
+    }
+};
+Template.updateCorporateSecretarysParticulars.rendered = function () {
+    var corpSecretaryPartHasData = CorporateSecretarys.findOne({"corpsecOwner": Meteor.userId()});
+    if (corpSecretaryPartHasData){
+        Session.set("updateCorpSecretaryPartDoc", corpSecretaryPartHasData._id);
+
+    }
+};
+Template.updateCompanyAuditor.rendered = function () {
+    var compAuditorHasData = CompanyAuditors.findOne({"auditorOwner": Meteor.userId()});
+    if (compAuditorHasData){
+        Session.set("updateCompAuditorDoc", compAuditorHasData._id);
+
+    }
+};
+Template.updateCompanyCapitalDetails.rendered = function () {
+    var capitalDetailsHasData = CapitalDetails.findOne({"capitalDetOwner": Meteor.userId()});
+    if (capitalDetailsHasData){
+        Session.set("updateCapitalDetailsDoc", capitalDetailsHasData._id);
+
+    }
+};
+Template.updateCompanyDirectorSignature.rendered = function () {
+    var dirSignHasData = DirectorSignature.findOne({"dirSignOwner": Meteor.userId()});
+    if (dirSignHasData){
+        Session.set("updateDirSignDoc", dirSignHasData._id);
+
+    }
+};
+Template.updateCompanySecretarySignature.rendered = function () {
+    var secSignHasData = SecretarySignature.findOne({"secSignOwner": Meteor.userId()});
+    if (secSignHasData){
+        Session.set("updateSecSignDoc", secSignHasData._id);
+
+    }
+};
+Template.updateSmeDetails.rendered = function () {
+    var smeDetailsHasData = SmeDetails.findOne({"smeDetOwner": Meteor.userId()});
+    if (smeDetailsHasData){
+        Session.set("updatesmeDetailsDoc", smeDetailsHasData._id);
 
     }
 };
