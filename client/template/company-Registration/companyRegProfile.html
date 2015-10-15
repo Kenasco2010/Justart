@@ -1,67 +1,84 @@
 <template name="companyRegProfile">
-    <div id="wrapper">
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
+  <div id="wrapper">
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
 
-                        {{#autoForm collection="CompanyRegistrationProfiles" id="insertCompanyRegistrationProfilesForm" type="insert"}}
-                            <fieldset>
-                                <!--<legend align="center">Set up Company Profile</legend>-->
-                                <h2 class="heading">Set up Company Profile <span></span></h2>
+            {{#autoForm collection="CompanyRegistrationProfiles" id="insertCompanyRegistrationProfilesForm" type="insert"}}
+            <fieldset>
+              <!--<legend align="center">Set up Company Profile</legend>-->
+              <h2 class="heading">Set up Company Profile <span></span></h2>
 
-                                <div class="form_main">
-                                    <!--<h4 class="heading"><strong>Quick </strong> Contact <span></span></h4>-->
-                                    <div class="form">
-                                        {{> afQuickField name='nameOfCompany' class="txt" id="nameOfCompany" data-toggle="btnToolTip"
-                                        data-placement="right" title="Name of the company you want to register" placeholder="Name of the company you want to register"}}
+              <div class="form_main">
+                <!--<h4 class="heading"><strong>Quick </strong> Contact <span></span></h4>-->
+                <div class="form">
+                  {{> afQuickField name='nameOfCompany' class="txt" id="nameOfCompany" data-toggle="btnToolTip"
+                  data-placement="right" title="The Name of the company you want to register eg. Newmont Ghana" placeholder="Name of the company you want to register"}}
 
-                                        {{> afQuickField name='presentedBy' class="txt" id="presentedBy" data-toggle="btnToolTip"
-                                        data-placement="right" title="The name of the person presenting the document"}}
-                                        {{> afQuickField name='principalActivity'  data-toggle="btnToolTip" class="txt"
-                                        data-placement="right" title="The main aim of the business you are setting up"}}
-                                        {{> afQuickField name='iSICCode' data-toggle="btnToolTip" class="txt"
-                                        data-placement="right" title="The ISIC Code of the company "}}
-                                        {{> afQuickField name='nameOrHouseNo' class="txt" data-toggle="btnToolTip"
-                                        data-placement="right" title="Location of the Business, any land mark. It could be a church or school building"}}
-                                        {{> afQuickField name='street' class="txt" data-toggle="btnToolTip"
-                                        data-placement="right" title="The area of the business, if you have a street name, please provide"}}
-                                    </div>
+                  {{> afQuickField name='presentedBy' class="txt" id="presentedBy" data-toggle="btnToolTip"
+                  data-placement="right" title="The name of the person presenting the document eg. John Doe" placeholder="The name of the person presenting the document"}}
 
+                  {{> afQuickField name='principalActivity'  data-toggle="btnToolTip" class="txt"
+                  data-placement="right" title="The main aim of the business you are setting up"
+                  placeholder="The main purpose of the business"}}
 
+                  {{> afQuickField name='iSICCode' data-toggle="btnToolTip" class="txt"
+                  data-placement="right" title="The ISIC Code of the company"
+                  placeholder="ISIC Code of the business"}}
 
-                                    {{> afQuickField name='city' class="txt" data-toggle="btnToolTip"
-                                    data-placement="right" title="The city where the business is located. eg. Tema"}}
+                  {{> afQuickField name='nameOrHouseNo' class="txt" data-toggle="btnToolTip"
+                  data-placement="right" title="Location of the Business, LandMark or Nearest bus-stop, School or Church. E.g 2, Mensah Sarbah street, Firestone Bus-stop, off Global Evangelical Church."
+                  placeholder="The house number of the business location"}}
 
-
-                                    {{> afQuickField name='district' class="txt" data-toggle="btnToolTip"
-                                    data-placement="right" title="The district where the business is located. eg. Tema District"}}
-                                    {{> afQuickField name='Region' class="txt" data-toggle="btnToolTip"
-                                    data-placement="right" title="The Region where the business is located eg. Greater Accra Region"}}
-                                    {{> afQuickField name='ownershipOfPremises' class="txt" options="allowed" data-toggle="btnToolTip"
-                                    data-placement="right" title="Name of the company you want to register"}}
-                                    {{> afQuickField name='landlordsName' data-toggle="btnToolTip" class="txt"
-                                    data-placement="right" title="Name of the company you want to register"}}
-                                    <h4>Add your company logo</h4>
-                                    {{> afQuickField name="picture" }}
-
-
-
-                                </div>
-                            </fieldset>
-                            <button type="submit" class="btn btn-primary txt2">Save Details</button>
-                        {{/autoForm}}
-                    </div>
+                  {{> afQuickField name='street' class="txt" data-toggle="btnToolTip"
+                  data-placement="right" title="The area where the business is located. E.g North-Legon"
+                  placeholder="Area,where the business is located"}}
                 </div>
 
-                <div class="col-md-4 col-md-offset-6">
-                    <a type="submit" class="btn btn-primary txt2" href="{{pathFor 'principalPlaceOfBusiness'}}">Next page</a>
-                </div>
 
-            </div>
-                </div>
-            </div>
+
+                {{> afQuickField name='city' class="txt" data-toggle="btnToolTip"
+                data-placement="right" title="The city where the business is located. eg. Tema"
+                placeholder="The city where the business is located"}}
+
+
+                {{> afQuickField name='district' class="txt" data-toggle="btnToolTip"
+                data-placement="right" title="The district where the business is located. eg. Tema District"
+                placeholder="Enter district your business district"}}
+
+                {{> afQuickField name='Region' class="txt" data-toggle="btnToolTip"
+                data-placement="right" title="The Region where the business is located eg. Greater Accra Region"
+                placeholder="Enter region where business is set up"}}
+
+                {{> afQuickField name='ownershipOfPremises' class="txt" options="allowed" data-toggle="btnToolTip"
+                data-placement="right" title="Name of the company you want to register E.g Blessed Assurace"
+                placeholder="The name of the business you're registering"}}
+
+                {{> afQuickField name='landlordsName' data-toggle="btnToolTip" class="txt"
+                data-placement="right" title="Name of Landlord of property the business occupies, If, Not owned by the business"
+                placeholder="Name of Landlordwhere business occupie"}}
+
+                <h4>Add your company logo</h4>
+                {{> afQuickField name="picture" }}
+
+
+
+              </div>
+            </fieldset>
+            <button type="submit" class="btn btn-primary txt2">Save Details</button>
+            {{/autoForm}}
+          </div>
+        </div>
+
+        <div class="col-md-4 col-md-offset-6">
+          <a type="submit" class="btn btn-primary txt2" href="{{pathFor 'principalPlaceOfBusiness'}}">Next page</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 
 </template>

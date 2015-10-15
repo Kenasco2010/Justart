@@ -77,14 +77,13 @@
                             <div class="tab-content">
                               <div id="profile-tab" class="tab-pane active">
                                 <div class="pd-20">
-                                  <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a> </div>
                                   <h3 class="mgbt-xs-15 mgtp-10 font-semibold">COMPANY PROFILE</h3>
                                   <div class="row">
                                     {{#if companyRegistrationProfile}}
                                     {{#each companyRegistrationProfile}}
                                     <div class="col-sm-6 col-md-9">
                                       <div class="row mgbt-xs-0">
-
+                                        <div class="vd_info tr"> <a href="{{pathFor 'UpdateCompRegProfile'}}" class="btn vd_btn btn-xs vd_bg-yellow" id="compRegProfupdate"> <i class="fa fa-pencil append-icon"></i> Edit Company </a> </div>
                                         <label class="col-xs-5 control-label profile-label-size">Company Name:</label>
                                         <div class="col-xs-7 col-md-6 controls profile-content-size">{{nameOfCompany}}</div>
                                         <br/>
@@ -143,15 +142,16 @@
                                   <hr class="pd-10"  />
 
                                   <!--SECOND SECTION OF COMPANY PROFILE-->
-                                  <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a> </div>
 
                                   <h3 class="mgbt-xs-15 mgtp-10 font-semibold"> PRINCIPAL PLACE OF BUSINESS</h3>
 
                                   <div class="row">
                                     {{#if principalBusinessPlace}}
                                     {{#each principalBusinessPlace}}
+
                                     <div class="col-sm-6 col-md-9">
                                       <div class="row mgbt-xs-0">
+                                        <div class="vd_info tr"> <a href="{{pathFor ''}}" class="btn vd_btn btn-xs vd_bg-yellow" id="principalPlaceofBusinessUpdate"> <i class="fa fa-pencil append-icon"></i> Edit Place </a> </div>
 
                                         <label class="col-xs-5 control-label profile-label-size">House/Building/Flat:</label>
                                         <div class="col-xs-7 controls profile-content-size">{{nameOHouseNo}}</div>
@@ -199,6 +199,7 @@
                                     {{#if companyPostalAdd}}
                                     {{#each companyPostalAdd}}
                                     <div class="col-sm-6 col-md-9">
+                                      <div class="vd_info tr"> <a href="{{pathFor ''}}" class="btn vd_btn btn-xs vd_bg-yellow" id="principalPlaceofBusinessUpdate"> <i class="fa fa-pencil append-icon"></i> Edit Place </a> </div>
                                       <div class="row mgbt-xs-0">
 
                                         <label class="col-xs-5 control-label profile-label-size">C/O:</label>
@@ -439,7 +440,7 @@
                               <div id="photos-tab" class="tab-pane">
                                 <div class="pd-20">
                                   <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-plus append-icon"></i> Add Photo </a> </div>
-                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold">INCASE OF CORPORATE BODY ACTING AS SECRETARY</h3>
+                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold">CORPORATE BODY ACTING AS SECRETARY</h3>
                                   <ul id="filters" class="nav nav-pills">
 
                                   </ul>
@@ -676,7 +677,7 @@
                                         <hr/>
                                         <div class="pd-10">
                                           <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-plus append-icon"></i> Add Project </a> </div>
-                                          <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="fa fa-bolt mgr-10 profile-icon"></i> SME DETAILS</h3>
+                                          <h3 class="mgbt-xs-15 mgtp-10 font-semibold"> SME DETAILS</h3>
                                           <table class="table table-striped table-hover">
                                             <div class="col-sm-6 col-md-9">
                                               <div class="row mgbt-xs-0">
@@ -715,7 +716,7 @@
                               <hr/>
                               <div id="groups-tab" class="tab-pane">
                                 <div class="pd-20">
-                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="fa fa-leaf mgr-10 profile-icon"></i> DIRECTOR SIGNATURES</h3>
+                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold"> DIRECTOR SIGNATURES</h3>
                                   <div class="row">
                                     <div class="panel-body">
                                       {{#if dirSign}}
@@ -734,7 +735,7 @@
                                   </div> <!-- row -->
                                 </div> <!-- pd-20 -->
                                 <div class="pd-20">
-                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="fa fa-leaf mgr-10 profile-icon"></i> SECRETARY SIGNATURES</h3>
+                                  <h3 class="mgbt-xs-15 mgtp-10 font-semibold"> SECRETARY SIGNATURES</h3>
                                   <div class="row">
                                     <div class="panel-body">
                                       {{#if secSign}}

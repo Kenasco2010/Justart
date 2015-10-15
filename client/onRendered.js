@@ -233,4 +233,20 @@ Template.index.rendered = function () {
     }
 
 
-}
+};
+Template.signup.rendered = function () {
+    $('input[type=email]').addClass('txt');
+    $('button[type=submit]').addClass('txtRegister');
+};
+Template.signin.rendered = function () {
+    $('input[type=email]').addClass('txt');
+    $('button[type=submit]').addClass('txtRegister');
+};
+
+Template.UpdateCompRegProfile.rendered = function () {
+    CompRegProfHasData = CompanyRegistrationProfiles.findOne({"companyRegProOwner": Meteor.userId()});
+    if (CompRegProfHasData){
+        Session.set("updateCompRegDoc", CompRegProfHasData._id);
+
+    }
+};

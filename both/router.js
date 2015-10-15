@@ -60,15 +60,32 @@ Router.route('/faq', function(){
     name: "faq"
 });
 
+Router.route('/fill-company-registration-form/welcome', function() {
+        if(Meteor.user()){
+            this.render("dashboardIntro");
+        }else{
+            Router.go("/sign-in")
+        }
+    },
+    {
+        name:"dashboardIntro",
+        layoutTemplate: "dashboardLayout"
+
+    });
 
 Router.route('/fill-company-registration-form/company-profile', function() {
-        this.render("companyRegProfile");
+        if(Meteor.user()){
+            this.render("companyRegProfile");
+        }else{
+            Router.go("/sign-in")
+        }
     },
     {
         name:"companyRegProfile",
         layoutTemplate: "dashboardLayout"
 
     });
+
 Router.route('/fill-company-registration-form/principal-place-of-business', function() {
         this.render("principalPlaceOfBusiness");
     },
@@ -164,3 +181,12 @@ Router.route('/company-registration-summary', function() {
 
     });
 
+/*UPDATE FORMS*/
+Router.route('/fill-company-registration-form/update-company-profile', function() {
+        this.render("UpdateCompRegProfile");
+    },
+    {
+        name:"UpdateCompRegProfile",
+        layoutTemplate: "dashboardLayout"
+
+    });

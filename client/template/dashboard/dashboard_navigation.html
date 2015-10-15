@@ -1,136 +1,139 @@
 <template name="dashboardNavigation">
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="{{pathFor 'index'}}">
-                        Back to home
-                    </a>
-                </li>
-                {{#if checkCompanyRegProfileDb}}
-                <li>
-                    <a href="{{pathFor 'companyRegProfile'}}">Company Profile<i class="fa fa-check"></i></a>
-                </li>
-                {{else}}
-                <li>
-                <a href="{{pathFor 'companyRegProfile'}}">Company Profile<i class="fa fa-close"></i></a>
-                </li>
-                {{/if}}
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a href="{{pathFor 'index'}}">
+            Back to home
+          </a>
+        </li>
+          <li>
+              <a href="{{pathFor 'dashboardIntro'}}">Intro<i class="fa fa-book"></i></a>
+          </li>
+        {{#if checkCompanyRegProfileDb}}
+        <li>
+          <a href="{{pathFor 'UpdateCompRegProfile'}}">Company Profile<i class="fa fa-check"></i></a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{pathFor 'companyRegProfile'}}">Company Profile<i class="fa fa-close"></i></a>
+        </li>
+        {{/if}}
 
-                {{#if checkPrincipalBusinessPlaceDatabase}}
-                    <li>
-                    <a href="{{pathFor 'principalPlaceOfBusiness'}}">Principal Business Place<i class="fa fa-check"></i> </a>
-                    </li>
-                {{else}}
-                    <li>
-                    <a href="{{pathFor 'principalPlaceOfBusiness'}}">Principal Business Place<i class="fa fa-close"></i> </a>
-                    </li>
-                {{/if}}
+        {{#if checkPrincipalBusinessPlaceDatabase}}
+        <li>
+          <a href="{{pathFor 'principalPlaceOfBusiness'}}">Principal Business Place<i class="fa fa-check"></i> </a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{pathFor 'principalPlaceOfBusiness'}}">Principal Business Place<i class="fa fa-close"></i> </a>
+        </li>
+        {{/if}}
 
-                 {{#if checkCompanyPostalAdd}}
-                    <li>
-                    <a href="{{pathFor 'companyPostalAddress'}}">Company Postal Address<i class="fa fa-check"></i></a>
-                    </li>
-                 {{else}}
-                    <li>
-                    <a href="{{pathFor 'companyPostalAddress'}}">Company Postal Address<i class="fa fa-close"></i></a>
-                    </li>
-                 {{/if}}
+        {{#if checkCompanyPostalAdd}}
+        <li>
+          <a href="{{pathFor 'companyPostalAddress'}}">Company Postal Address<i class="fa fa-check"></i></a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{pathFor 'companyPostalAddress'}}">Company Postal Address<i class="fa fa-close"></i></a>
+        </li>
+        {{/if}}
 
-                {{#if checkDirectorParticulars}}
+        {{#if checkDirectorParticulars}}
 
-                    <li>
-                        <a href="{{pathFor 'directorsParticulars'}}">Director Particulars<i class="fa fa-check"></i></a>
-                    </li>
-                {{else}}
-                    <li>
-                        <a href="{{pathFor 'directorsParticulars'}}">Director Particulars<i class="fa fa-close"></i></a>
-                    </li>
-                {{/if}}
+        <li>
+          <a href="{{pathFor 'directorsParticulars'}}">Director Particulars<i class="fa fa-check"></i></a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{pathFor 'directorsParticulars'}}">Director Particulars<i class="fa fa-close"></i></a>
+        </li>
+        {{/if}}
 
-                {{#if checkCompanySecDB}}
-                    <li>
-                        <a href="{{pathFor 'secretarysParticulars'}}">Secretary Particulars<i class="fa fa-check"></i></a>
-                    </li>
-                {{else}}
-                    <li>
-                        <a href="{{pathFor 'secretarysParticulars'}}">Secretary Particulars<i class="fa fa-close"></i></a>
-                    </li>
-                {{/if}}
+        {{#if checkCompanySecDB}}
+        <li>
+          <a href="{{pathFor 'secretarysParticulars'}}">Secretary Particulars<i class="fa fa-check"></i></a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{pathFor 'secretarysParticulars'}}">Secretary Particulars<i class="fa fa-close"></i></a>
+        </li>
+        {{/if}}
 
-                {{#if checkCorpSecDB}}
-                    <li>
-                        <a href="{{pathFor 'corporateSecretarysParticulars'}}">Corporate Sec.(if any) <i class="fa fa-check"></i></a>
-                    </li>
-                {{else}}
-                    <li>
-                        <a href="{{pathFor 'corporateSecretarysParticulars'}}">Corporate Sec.(if any)<i class="fa fa-close"></i> </a>
-                    </li>
-                {{/if}}
+        {{#if checkCorpSecDB}}
+        <li>
+          <a href="{{pathFor 'corporateSecretarysParticulars'}}">Corporate Sec.(if any) <i class="fa fa-check"></i></a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{pathFor 'corporateSecretarysParticulars'}}">Corporate Sec.(if any)<i class="fa fa-close"></i> </a>
+        </li>
+        {{/if}}
 
-                {{#if checkAuditorDB}}
+        {{#if checkAuditorDB}}
 
-                    <li>
-                        <a href="{{pathFor 'companyAuditor'}}">Auditor<i class="fa fa-check"></i></a>
-                    </li>
-                {{else}}
-                    <li>
-                        <a href="{{pathFor 'companyAuditor'}}">Auditor<i class="fa fa-close"></i></a>
-                    </li>
-                {{/if}}
+        <li>
+          <a href="{{pathFor 'companyAuditor'}}">Auditor<i class="fa fa-check"></i></a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{pathFor 'companyAuditor'}}">Auditor<i class="fa fa-close"></i></a>
+        </li>
+        {{/if}}
 
-                {{#if checkCapitalDetails}}
-                    <li>
-                        <a href="{{pathFor 'companyCapitalDetails'}}">Capital Details <i class="fa fa-check"></i></a>
-                    </li>
-                {{else}}
-                    <li>
-                        <a href="{{pathFor 'companyCapitalDetails'}}">Capital Details <i class="fa fa-close"></i></a>
-                    </li>
-                {{/if}}
+        {{#if checkCapitalDetails}}
+        <li>
+          <a href="{{pathFor 'companyCapitalDetails'}}">Capital Details <i class="fa fa-check"></i></a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{pathFor 'companyCapitalDetails'}}">Capital Details <i class="fa fa-close"></i></a>
+        </li>
+        {{/if}}
 
-                {{#if checkDirectorSign}}
+        {{#if checkDirectorSign}}
 
-                    <li>
-                        <a href="{{pathFor 'companyDirectorSignature'}}">Director Signature <i class="fa fa-check"></i></a>
-                    </li>
-                {{else}}
-                    <li>
-                        <a href="{{pathFor 'companyDirectorSignature'}}">Director Signature <i class="fa fa-close"></i></a>
-                    </li>
-                {{/if}}
+        <li>
+          <a href="{{pathFor 'companyDirectorSignature'}}">Director Signature <i class="fa fa-check"></i></a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{pathFor 'companyDirectorSignature'}}">Director Signature <i class="fa fa-close"></i></a>
+        </li>
+        {{/if}}
 
-                {{#if checkSecSign}}
-                    <li>
-                        <a href="{{pathFor 'companySecretarySignature'}}">Secretary Signature<i class="fa fa-check"></i> </a>
-                    </li>
-                {{else}}
-                    <li>
-                        <a href="{{pathFor 'companySecretarySignature'}}">Secretary Signature<i class="fa fa-close"></i> </a>
-                    </li>
-                {{/if}}
+        {{#if checkSecSign}}
+        <li>
+          <a href="{{pathFor 'companySecretarySignature'}}">Secretary Signature<i class="fa fa-check"></i> </a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{pathFor 'companySecretarySignature'}}">Secretary Signature<i class="fa fa-close"></i> </a>
+        </li>
+        {{/if}}
 
-                {{#if checkSmeDetails}}
-                    <li>
-                        <a href="{{pathFor 'smeDetails'}}">SME Details <i class="fa fa-check"></i></a>
-                    </li>
-                 {{else}}
-                    <li>
-                        <a href="{{pathFor 'smeDetails'}}">SME Details <i class="fa fa-close"></i></a>
-                    </li>
-                {{/if}}
+        {{#if checkSmeDetails}}
+        <li>
+          <a href="{{pathFor 'smeDetails'}}">SME Details <i class="fa fa-check"></i></a>
+        </li>
+        {{else}}
+        <li>
+          <a href="{{pathFor 'smeDetails'}}">SME Details <i class="fa fa-close"></i></a>
+        </li>
+        {{/if}}
 
-                 <li>
-                    <a href="{{pathFor 'RegistrationSummaryDocument'}}">Application Summary</a>
-                </li>
-                <li>
-                    <a href="{{pathFor 'signout'}}">Sign-Out <i class="fa fa-power-off"></i></a>
-                </li>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
-
+        <li>
+          <a href="{{pathFor 'RegistrationSummaryDocument'}}">Application Summary</a>
+        </li>
+        <li>
+          <a href="{{pathFor 'signout'}}">Sign-Out <i class="fa fa-power-off"></i></a>
+        </li>
+      </ul>
     </div>
-    <!-- /#wrapper -->
+    <!-- /#sidebar-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
 </template>
