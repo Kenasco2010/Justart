@@ -1,0 +1,149 @@
+<template name="bookKeeping">
+    {{> navigation}}
+<div class="container">
+    <h2 class="heading">Book keeping<span></span></h2>
+            <div class="col-md-5 incomes">
+                {{#autoForm collection="BookKeepingIncomes" id="insertBookKeepingIncomesForm" type="insert"}}
+                    <fieldset>
+
+                        {{> afQuickField name='typeOfIncome' class="txt" data-toggle="btnToolTip"
+                        data-placement="right" title="Please Enter type of income received eg.example"
+                        placeholder="Please Enter type of income received"}}
+                        {{> afQuickField name='amount' class="txt" data-toggle="btnToolTip"
+                        data-placement="right" title="Please Enter any amount received eg. 50.00"
+                        placeholder="Please Enter any amount received"}}
+
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary txt2">Enter</button>
+                {{/autoForm}}
+            </div>
+
+            <div class="col-md-5 expenses">
+                {{> bookKeepingExpenses}}
+            </div>
+</div>
+    <hr/>
+
+<div class="container">
+
+
+    <div class="bookKeeping-table-left" >
+        <h2 class="heading">Incomes<span></span></h2>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Date: 17/October/2015</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-condensed">
+                        <thead>
+
+                        <tr>
+                            <td><strong>Item</strong></td>
+                            <td class="text-center"><strong>Price</strong></td>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                        {{#each incomeBooking}}
+                        <tr>
+                            <td>{{typeOfIncome}}</td>
+                            <td class="text-center">{{amount}}</td>
+
+                        </tr>
+                        {{/each}}
+
+                        <tr>
+                            <td class="thick-line"></td>
+                            <td class="thick-line"></td>
+                            <td class="thick-line text-center"><strong>Subtotal</strong></td>
+                            <td class="thick-line text-right">$670.99</td>
+                        </tr>
+                        <tr>
+                            <td class="no-line"></td>
+                            <td class="no-line"></td>
+                            <td class="no-line text-center"><strong>Shipping</strong></td>
+                            <td class="no-line text-right">$15</td>
+                        </tr>
+                        <tr>
+                            <td class="no-line"></td>
+                            <td class="no-line"></td>
+                            <td class="no-line text-center"><strong>Total</strong></td>
+                            <td class="no-line text-right">$685.99</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bookKeeping-table-right">
+        <h2 class="heading">Expenses<span></span></h2>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong>Date: 17/October/2015</strong></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <thead>
+                                    <tr>
+                                        <td><strong>Item</strong></td>
+                                        <td class="text-center"><strong>Price</strong></td>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                                    {{#each expenseBooking}}
+                                    <tr>
+                                        <td>{{items}}</td>
+                                        <td class="text-center">{{prices}}</td>
+
+                                    </tr>
+                                    {{/each}}
+
+                                    <tr>
+                                        <td class="thick-line"></td>
+                                        <td class="thick-line"></td>
+                                        <td class="thick-line text-center"><strong>Subtotal</strong></td>
+                                        <td class="thick-line text-right">$670.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="no-line"></td>
+                                        <td class="no-line"></td>
+                                        <td class="no-line text-center"><strong>Shipping</strong></td>
+                                        <td class="no-line text-right">$15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="no-line"></td>
+                                        <td class="no-line"></td>
+                                        <td class="no-line text-center"><strong>Total</strong></td>
+                                        <td class="no-line text-right">$685.99</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</div>
+</template>
+
+<template name="bookKeepingExpenses">
+
+                        {{#autoForm collection="BookKeepingExpenses" id="insertBookKeepingExpensesForm" type="insert"}}
+                            <fieldset>
+                                <!--<h2 class="heading">Book keeping<span></span></h2>-->
+                                {{> afQuickField name='items' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Please Enter any money received eg. 50.00"
+                                placeholder="Please Enter any money received"}}
+                                {{> afQuickField name='prices' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Please Enter any money received eg. 50.00"
+                                placeholder="Please Enter any money received"}}
+                            </fieldset>
+                            <button type="submit" class="btn btn-primary txt2">Enter</button>
+                        {{/autoForm}}
+
+</template>

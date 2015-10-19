@@ -10,3 +10,9 @@ Template.RegistrationSummaryDocument.events({
     }
 });
 
+Template.RegistrationSummaryDocument.events({
+    'click #submitDocToJustart': function () {
+        Meteor.call('sendEmail')
+        alert("Data Submitted to Justart")
+    }
+});

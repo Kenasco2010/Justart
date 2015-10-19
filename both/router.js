@@ -180,7 +180,12 @@ Router.route('/company-registration-summary', function() {
         layoutTemplate: "dashboardLayout"
 
     });
-
+Router.route('/company-book-keeping', function(){
+        this.render("bookKeeping");
+    },
+    {
+        name: "bookKeeping"
+    });
 /*UPDATE FORMS*/
 Router.route('/fill-company-registration-form/update-company-profile', function() {
         this.render("updateCompRegProfile");

@@ -156,3 +156,12 @@ Template.updateSmeDetails.helpers({
         return SmeDetails.findOne(Session.get("updatesmeDetailsDoc"));
     }
 });
+
+Template.bookKeeping.helpers({
+    incomeBooking: function () {
+        return BookKeepingIncomes.find({bookKeepingIncomesOwner: Meteor.userId()}).fetch()
+    },
+    expenseBooking: function () {
+        return BookKeepingExpenses.find({bookKeepingExpensesOwner: Meteor.userId()}).fetch()
+    }
+});

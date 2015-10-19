@@ -1,27 +1,62 @@
-.two-col {
-  overflow: hidden;/* Makes this div contain its floats */
-}
 
-.two-col .col1,
-.two-col .col2 {
-  width: 49%;
-}
+  .two-col {
+    overflow: hidden; /* Makes this div contain its floats */
+  }
 
-.two-col .col1 {
-  float: left;
-}
+  .two-col .col1,
+  .two-col .col2 {
+    width: 49%;
+  }
 
-.two-col .col2 {
-  float: right;
-}
+  .two-col .col1 {
+    float: left;
+  }
 
-.two-col label {
-  display: block;
-}
-.profile-label-size{
-  font-size: 17px;
-}
-.profile-content-size{
-  font-size: 16px;
-}
+  .two-col .col2 {
+    float: right;
+  }
 
+  .two-col label {
+    display: block;
+  }
+  .profile-label-size {
+    font-size: 17px;
+  }
+  .profile-content-size {
+    font-size: 16px;
+  }
+
+  .incomes {
+    float: left;
+    width: 50%;
+  }
+  .expenses {
+    float: right;
+    width: 50%;
+  }
+  .bookKeeping-table-left {
+    float: left;
+    width: 49%;
+    margin: 0px 0px 0px 6px;
+  }
+  .bookKeeping-table-right {
+    float: left;
+    width: 49%;
+    margin: 0px 0px 0px 4px;
+  }
+
+  .invoice-title h2, .invoice-title h3 {
+    display: inline-block;
+  }
+
+  .table > tbody > tr > .no-line {
+    border-top: none;
+  }
+
+  .table > thead > tr > .no-line {
+    border-bottom: none;
+  }
+
+  .table > tbody > tr > .thick-line {
+    border-top: 2px solid;
+  }
