@@ -181,7 +181,11 @@ Router.route('/company-registration-summary', function() {
 
     });
 Router.route('/company-book-keeping', function(){
+    if(Meteor.user()) {
         this.render("bookKeeping");
+    } else{
+        Router.go("/sign-in")
+    }
     },
     {
         name: "bookKeeping"
