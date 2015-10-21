@@ -163,5 +163,32 @@ Template.bookKeeping.helpers({
     },
     expenseBooking: function () {
         return BookKeepingExpenses.find({bookKeepingExpensesOwner: Meteor.userId()}).fetch()
+    },
+
+    addUpIncome: function () {
+        var all = BookKeepingIncomes.find({bookKeepingIncomesOwner: Meteor.userId()}).fetch();
+        var total = 0;
+        var length = 0
+        var amount = 0
+
+        for (var i = 0; i < all.length; i++) {
+            amount = parseInt(all[i].amount)
+            console.log(amount);
+            total = total + amount 
+        };
+        return total
+    },
+    addUpExpense: function () {
+        var all = BookKeepingExpenses.find({bookKeepingExpensesOwner: Meteor.userId()}).fetch()
+        var total = 0;
+        var length = 0
+        var amount = 0
+
+        for (var i = 0; i < all.length; i++) {
+            amount = parseInt(all[i].prices)
+            console.log(amount);
+            total = total + amount 
+        };
+        return total
     }
 });
