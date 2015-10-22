@@ -158,10 +158,10 @@ Template.updateSmeDetails.helpers({
 });
 
 Template.bookKeeping.helpers({
-    incomeBooking: function () {
-        return BookKeepingIncomes.find({bookKeepingIncomesOwner: Meteor.userId()}).fetch()
+    transactionCashIn: function () {
+        return Transactions.find({transactionOwner: Meteor.userId(), type:"Cash In"}).fetch()
     },
-    expenseBooking: function () {
-        return BookKeepingExpenses.find({bookKeepingExpensesOwner: Meteor.userId()}).fetch()
-    }
+    transactionCashOut: function () {
+        return Transactions.find({transactionOwner: Meteor.userId(), type:"Cash Out"}).fetch()
+    },
 });
