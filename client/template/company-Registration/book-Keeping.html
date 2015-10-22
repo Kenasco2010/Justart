@@ -40,7 +40,7 @@
 
                         <tr>
                             <td><strong>Item</strong></td>
-                            <td class="text-center"><strong>Price</strong></td>
+                            <td class="text-center"><strong>Price ($)</strong></td>
 
                         </tr>
                         </thead>
@@ -54,23 +54,23 @@
                         </tr>
                         {{/each}}
 
-                        <tr>
+<!--                         <tr>
                             <td class="thick-line"></td>
                             <td class="thick-line"></td>
                             <td class="thick-line text-center"><strong>Subtotal</strong></td>
                             <td class="thick-line text-right">$670.99</td>
-                        </tr>
-                        <tr>
+                        </tr> -->
+<!--                         <tr>
                             <td class="no-line"></td>
                             <td class="no-line"></td>
                             <td class="no-line text-center"><strong>Shipping</strong></td>
                             <td class="no-line text-right">$15</td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <td class="no-line"></td>
                             <td class="no-line"></td>
                             <td class="no-line text-center"><strong>Total</strong></td>
-                            <td class="no-line text-right">{{addUpIncome}}</td>
+                            <td class="no-line text-right">$ {{addUpIncome}}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -103,19 +103,19 @@
 
                                     </tr>
                                     {{/each}}
-
+<!-- 
                                     <tr>
                                         <td class="thick-line"></td>
                                         <td class="thick-line"></td>
                                         <td class="thick-line text-center"><strong>Subtotal</strong></td>
                                         <td class="thick-line text-right">$670.99</td>
-                                    </tr>
-                                    <tr>
+                                    </tr> -->
+                               <!--      <tr>
                                         <td class="no-line"></td>
                                         <td class="no-line"></td>
                                         <td class="no-line text-center"><strong>Shipping</strong></td>
                                         <td class="no-line text-right">$15</td>
-                                    </tr>
+                                    </tr> -->
                                     <tr>
                                         <td class="no-line"></td>
                                         <td class="no-line"></td>
@@ -128,7 +128,14 @@
                         </div>
                     </div>
                 </div>
+
+    <div class="col-md-5 expenses">
+        {{> pieChart}}
+    </div>
 </div>
+
+
+
 </template>
 
 <template name="bookKeepingExpenses">
@@ -146,4 +153,23 @@
                             <button type="submit" class="btn btn-primary txt2">Enter</button>
                         {{/autoForm}}
 
+</template>
+
+
+<template name="barChart">
+    <h4>Bar Chart </h4>
+    <svg id="barChart">
+    </svg>
+    <br>
+    <input type="button" id="add" value="Add a Value" />
+    <input type="button" id="remove" value="Remove a Value" />
+    <input type="button" id="randomize" value="Randomize Values" />
+    <input type="button" id="toggleSort" value="Toggle Sorting" /> 
+</template>
+
+<template name="pieChart">
+    <h4>Pie Chart</h4>
+    <svg id='pie'>
+            
+    </svg>
 </template>
