@@ -231,8 +231,6 @@ Template.index.rendered = function () {
             $(this).html($(this).parent().attr('data-perc'))
         })
     }
-
-
 };
 Template.signup.rendered = function () {
     $('input[type=email]').addClass('txt');
@@ -321,3 +319,68 @@ Template.updateSmeDetails.rendered = function () {
 
     }
 };
+    
+Template.pieChart.rendered = function () {
+        var all = BookKeepingIncomes.find({bookKeepingIncomesOwner: Meteor.userId()}).fetch()
+        var pi = []
+        var fig = 0
+        
+
+        for (var i = 0; i < all.length; i++) {
+            fig = parseInt(all[i].amount)
+            figLabel =  all[i].typeOfIncome
+            element = {"figureLabel": fig,"figure": fig}
+            pi.push(element)
+        };
+
+        data = pi
+        pie = d3.layout.pie().value( function(d) {return d.figure})
+        // define radius and area of pie
+        var w = 300;
+        var h = 300;
+    
+        var outerRadius = w / 2
+        var innerRadius = w / 3;
+        // Create arc
+        var arc = d3.svg.arc()
+                        .innerRadius(innerRadius)
+                        .outerRadius(outerRadius);
+
+        
+        // create svg elements
+        var svg = d3.select("#pie")
+                    .attr('width', w)
+                    .attr('height', h);
+
+        Deps.autorun(function(){
+            // create arcs based on dataset
+                // set up groups
+            var arcs = svg.selectAll("g.arc")
+                          . data(pie(data));
+            // append 
+            arcs.enter()
+                .append("g")
+                .attr("class", "arc")
+                .attr("transform", "translate(" + outerRadius + ", " + outerRadius + ")");
+                
+            // draw arc paths
+            var color = d3.scale.category10();  // make arc visible
+            
+            arcs.append('path')
+               .attr('fill', function(d, i){
+                    return color(i);
+                })
+               .attr("d", arc);
+
+            // add labels for each wedge
+            arcs.append("text")
+                .attr('transform', function(d) {
+                    return "translate(" + arc.centroid(d) + ")";
+                 })
+                .attr('text-anchor', 'middle')
+                .text(function(d) {
+                    return d.value
+                })  
+            
+        });
+}; 

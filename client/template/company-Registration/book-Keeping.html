@@ -46,9 +46,11 @@
 
                         <tr>
                             <td><strong>Item</strong></td>
+
                             <td class="text-center"><strong>Amount</strong></td>
                             <td class="text-center"><strong>Date</strong></td>
                             <td class="text-center"><strong>Transaction</strong></td>
+
 
                         </tr>
                         </thead>
@@ -119,30 +121,120 @@
                             </tr>
                         {{/each}}
 
-                        <tr>
+<!--                         <tr>
                             <td class="thick-line"></td>
                             <td class="thick-line"></td>
                             <td class="thick-line text-center"><strong>Subtotal</strong></td>
                             <td class="thick-line text-right">$670.99</td>
-                        </tr>
-                        <tr>
+                        </tr> -->
+<!--                         <tr>
                             <td class="no-line"></td>
                             <td class="no-line"></td>
                             <td class="no-line text-center"><strong>Shipping</strong></td>
                             <td class="no-line text-right">$15</td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <td class="no-line"></td>
                             <td class="no-line"></td>
                             <td class="no-line text-center"><strong>Total</strong></td>
-                            <td class="no-line text-right">$685.99</td>
+                            <td class="no-line text-right">$ {{addUpIncome}}</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-</div>
     </div>
+    <div class="bookKeeping-table-right">
+        <h2 class="heading">Expenses<span></span></h2>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong>Date: 17/October/2015</strong></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <thead>
+                                    <tr>
+                                        <td><strong>Item</strong></td>
+                                        <td class="text-center"><strong>Price</strong></td>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                                    {{#each expenseBooking}}
+                                    <tr>
+                                        <td>{{items}}</td>
+                                        <td class="text-center">{{prices}}</td>
+
+                                    </tr>
+                                    {{/each}}
+<!--
+                                    <tr>
+                                        <td class="thick-line"></td>
+                                        <td class="thick-line"></td>
+                                        <td class="thick-line text-center"><strong>Subtotal</strong></td>
+                                        <td class="thick-line text-right">$670.99</td>
+                                    </tr> -->
+                               <!--      <tr>
+                                        <td class="no-line"></td>
+                                        <td class="no-line"></td>
+                                        <td class="no-line text-center"><strong>Shipping</strong></td>
+                                        <td class="no-line text-right">$15</td>
+                                    </tr> -->
+                                    <tr>
+                                        <td class="no-line"></td>
+                                        <td class="no-line"></td>
+                                        <td class="no-line text-center"><strong>Total</strong></td>
+                                        <td class="no-line text-right">{{addUpExpense}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    <div class="col-md-5 expenses">
+        {{> pieChart}}
+    </div>
+</div>
+</template>
+
+<template name="bookKeepingExpenses">
+
+                        {{#autoForm collection="BookKeepingExpenses" id="insertBookKeepingExpensesForm" type="insert"}}
+                            <fieldset>
+                                <!--<h2 class="heading">Book keeping<span></span></h2>-->
+                                {{> afQuickField name='items' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Please Enter any money received eg. 50.00"
+                                placeholder="Please Enter any money received"}}
+                                {{> afQuickField name='prices' class="txt" data-toggle="btnToolTip"
+                                data-placement="right" title="Please Enter any money received eg. 50.00"
+                                placeholder="Please Enter any money received"}}
+                            </fieldset>
+                            <button type="submit" class="btn btn-primary txt2">Enter</button>
+                        {{/autoForm}}
+
+</template>
+
+
+<template name="barChart">
+    <h4>Bar Chart </h4>
+    <svg id="barChart">
+    </svg>
+    <br>
+    <input type="button" id="add" value="Add a Value" />
+    <input type="button" id="remove" value="Remove a Value" />
+    <input type="button" id="randomize" value="Randomize Values" />
+    <input type="button" id="toggleSort" value="Toggle Sorting" />
+</template>
+
+<template name="pieChart">
+    <h4>Pie Chart</h4>
+    <svg id='pie'>
+
+    </svg>
 </template>
 
